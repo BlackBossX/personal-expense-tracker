@@ -2,9 +2,11 @@ C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedge
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\bin\Debug\PocketLedger.exe
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\bin\Debug\PocketLedger.pdb
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.csproj.AssemblyReference.cache
-C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.Form1.resources
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.Properties.Resources.resources
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.csproj.GenerateResource.cache
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.csproj.CoreCompileInputs.cache
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.exe
 C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.pdb
+C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.landing.resources
+C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.login.resources
+C:\Users\Malan\Desktop\Project\personal-expense-tracker\PocketLedger\PocketLedger\obj\Debug\PocketLedger.signup.resources
