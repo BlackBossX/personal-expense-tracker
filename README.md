@@ -1,6 +1,16 @@
 # PocketLedger - Personal Expense Tracker
 
+<div align="center">
+  <img src="PocketLedger/images/white_logo.png" alt="PocketLedger Logo" width="200" />
+</div>
+
 **PocketLedger** is a simple, intuitive desktop application built in C# (.NET Framework 4.7.2) designed to help individuals monitor and manage their daily financial activities. It provides a straightforward user interface to log expenses, categorize transactions, and review spending habits effortlessly, completely bypassing the complexity of massive enterprise financial tools.
+
+## Interface Preview
+
+<p align="center">
+  <img src="PocketLedger/images/SS.png" width="700"/>
+</p>
 
 ## Why PocketLedger?
 
