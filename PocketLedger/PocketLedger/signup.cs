@@ -16,5 +16,10 @@ namespace PocketLedger
         {
             InitializeComponent();
         }
+
+        private void signup_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
