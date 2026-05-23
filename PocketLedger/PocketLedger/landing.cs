@@ -12,8 +12,6 @@ namespace PocketLedger
 {
     public partial class landing : Form
     {
-        login loginpage = new login();
-        signup signuppage = new signup();
         public landing()
         {
             InitializeComponent();
@@ -36,11 +34,13 @@ namespace PocketLedger
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            login loginpage = new login();
             loginpage.Show();
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            signup signuppage = new signup();
             signuppage.Show();
         }
     }
