@@ -207,7 +207,6 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "signup";
             Text = "Sign Up";
-            Load += signup_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
