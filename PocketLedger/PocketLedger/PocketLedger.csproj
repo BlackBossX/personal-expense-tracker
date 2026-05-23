@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTransaction.Designer.cs">
+      <DependentUpon>AddTransaction.cs</DependentUpon>
+    </Compile>
     <Compile Include="landing.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,9 @@
     <Compile Include="signup.Designer.cs">
       <DependentUpon>signup.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddTransaction.resx">
+      <DependentUpon>AddTransaction.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="landing.resx">
       <DependentUpon>landing.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +139,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2275e4f60130c1eebec0009fc16c7832.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
