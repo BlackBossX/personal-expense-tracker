@@ -26,7 +26,7 @@ namespace PocketLedger.Database
                 if (decryptedIsValid)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Dashboard dashBoardLoad = new Dashboard();
+                    Dashboard dashBoardLoad = new Dashboard(email);
                     dashBoardLoad.Show();
                     loginForm.Close();
                 }
