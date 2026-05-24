@@ -9,8 +9,10 @@
 ## Interface Preview
 
 <p align="center">
-  <img src="PocketLedger/images/SS.png" width="700"/>
+  <img src="PocketLedger/images/landing.png" width="700"/>
 </p>
+
+Please refer to the [UI Showcase](UI.md) to view the complete interface screens, including the Landing Page, Login, Sign Up, and Dashboard.
 
 ## Why PocketLedger?
 
@@ -59,16 +61,20 @@ Managing personal finances can be challenging without a concrete tracking system
 │   └── database.sql            # Database initialization script
 ├── PocketLedger/
 │   ├── PocketLedger.slnx       # Main Solution file
-│   ├── icons/                  # Icon assets (cart, home, login, etc.)
+│   ├── icons/                  # Assorted Icon assets (cart, home, login, etc.)
+│   │   └── white/              # White-themed icons
 │   ├── images/                 # Image assets (logos, UI resources)
+│   │   └── profilepics/        # User profile pictures
 │   └── PocketLedger/           # Main .NET Project Directory
 │       ├── Database/           # Database connections & repositories
-│       ├── Forms/              # UI Forms (AddTransaction, landing, login, signup)
+│       ├── Forms/              # Extracted UI Forms (Addexpense, AddIncome, Dashboard, landing, login, signup, etc.)
 │       ├── Properties/         # Project properties and settings
 │       ├── Resources/          # Embedded .NET resources
 │       ├── PocketLedger.csproj # .NET 10 Project file
 │       └── Program.cs          # Application entry point
 ├── README.md
+├── UI.md                       # User Interface screenshots
+├── requirements.txt            # Python/other external requirements
 └── project_proposal.pdf
 ```
 
