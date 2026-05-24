@@ -60,6 +60,9 @@ namespace PocketLedger
 
             signup.Signup(email, password, username, uploadedpath);
             MessageBox.Show("Signup successful!");
+
+            login loadlogin = new login();
+            loadlogin.Show();
         }
     }
 }

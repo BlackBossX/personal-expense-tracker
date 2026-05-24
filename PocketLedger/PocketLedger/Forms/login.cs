@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PocketLedger.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,11 @@ namespace PocketLedger
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            string email = emailbox.Text;
+            string password = passwordbox.Text;
+
             Database.UserRepository userRepository = new Database.UserRepository();
-            userRepository.Login(emailbox.Text, passwordbox.Text);
+            userRepository.Login(email, password,this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

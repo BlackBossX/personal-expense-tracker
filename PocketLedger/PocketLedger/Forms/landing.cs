@@ -38,12 +38,14 @@ namespace PocketLedger
         {
             login loginpage = new login();
             loginpage.Show();
+
         }
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             signup signuppage = new signup();
             signuppage.Show();
+
         }
     }
 }
