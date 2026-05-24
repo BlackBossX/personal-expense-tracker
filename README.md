@@ -32,8 +32,9 @@ Managing personal finances can be challenging without a concrete tracking system
 
 ## Prerequisites
 
-- [.NET Framework 4.7.2 Runtime](https://dotnet.microsoft.com/download/dotnet-framework/net472) (if you just want to run the app)
-- Visual Studio 2022 (or newer) if you plan to build or contribute to the project.
+- [.NET 10.0 SDK](https://dotnet.microsoft.com/download/dotnet/10.0)
+- Visual Studio 2022 (or newer) to build or contribute to the project.
+- MySQL Server (for local database storage)
 
 ## Getting Started
 
@@ -41,12 +42,35 @@ Managing personal finances can be challenging without a concrete tracking system
    ```bash
    git clone https://github.com/BlackBossX/personal-expense-tracker.git
    ```
-2. **Open the Project:**
-   Locate and open the `PocketLedger.sln` solution file using Visual Studio.
-3. **Build the Application:**
+2. **Database Initialization:**
+   - Ensure your MySQL Server is up and running.
+   - Execute the SQL script located at `database/database.sql` on your MySQL server to set up the `pocketledgerDB` database and its tables (`Users`, `Categories`, `Transactions`, `Budgets`).
+3. **Open the Project:**
+   Locate and open the `PocketLedger/PocketLedger.slnx` solution file using Visual Studio.
+4. **Build the Application:**
    Press `Ctrl + Shift + B` to build the solution and restore any missing dependencies.
-4. **Run:**
+5. **Run:**
    Hit `F5` to start tracking your expenses!
+
+## Project Structure
+
+```text
+├── database/
+│   └── database.sql            # Database initialization script
+├── PocketLedger/
+│   ├── PocketLedger.slnx       # Main Solution file
+│   ├── icons/                  # Icon assets (cart, home, login, etc.)
+│   ├── images/                 # Image assets (logos, UI resources)
+│   └── PocketLedger/           # Main .NET Project Directory
+│       ├── Database/           # Database connections & repositories
+│       ├── Forms/              # UI Forms (AddTransaction, landing, login, signup)
+│       ├── Properties/         # Project properties and settings
+│       ├── Resources/          # Embedded .NET resources
+│       ├── PocketLedger.csproj # .NET 10 Project file
+│       └── Program.cs          # Application entry point
+├── README.md
+└── project_proposal.pdf
+```
 
 ## Contributing
 
