@@ -12,6 +12,10 @@ namespace PocketLedger.Forms
     public partial class Dashboard : Form
     {
         private string loggedEmail;
+        Color normalColor = Color.FromArgb(0, 0, 40);
+        Color hoverColor = Color.FromArgb(25, 25, 80);
+        Color activeColor = Color.FromArgb(40, 40, 120);
+        Color originalColor = Color.FromArgb(3, 7, 55);
         public Dashboard(string loggedmail)
         {
             InitializeComponent();
@@ -56,11 +60,9 @@ namespace PocketLedger.Forms
 
             profilepic.Paint += Profilepic_Paint;
 
-
-
-
             Database.DashBoardLoading dashBoardLoading = new Database.DashBoardLoading();
             dashBoardLoading.profilePicLoad(loggedEmail, this);
+            dashBoardLoading.greeting(loggedEmail, this);
         }
 
         private void profilepic_Click(object sender, EventArgs e)
@@ -84,8 +86,58 @@ namespace PocketLedger.Forms
             );
         }
 
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            AddTransection transectionForm = new AddTransection();
+            transectionForm.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void Sidebar_MouseEnter(object sender, EventArgs e)
+        {
+            Panel panel = sender as Panel;
+
+            if (panel.BackColor != activeColor)
+            {
+                panel.BackColor = hoverColor;
+            }
+        }
+
+        private void Sidebar_MouseLeave(object sender, EventArgs e)
+        {
+            Panel panel = sender as Panel;
+
+            if (panel.BackColor != activeColor)
+            {
+                panel.BackColor = originalColor;
+            }
+        }
+
+        private void Sidebar_Click(object sender, EventArgs e)
+        {
+            Panel panel = sender as Panel;
+            panel.BackColor = activeColor;
+
+            ResetSidebar();
 
 
+        }
 
+        private void ResetSidebar()
+        {
+            homepanel.BackColor = originalColor;
+            profilepanel.BackColor = originalColor;
+            expensepanel.BackColor = originalColor;
+            incomepanel.BackColor = originalColor;
+            historypanel.BackColor = originalColor;
+            transactionpanel.BackColor = originalColor;
+        }
+
+        private void transactionpanel_Paint(object sender, PaintEventArgs e)
+        {
+        }
     }
 }
