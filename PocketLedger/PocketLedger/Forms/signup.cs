@@ -52,17 +52,29 @@ namespace PocketLedger
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             Database.UserRepository signup = new Database.UserRepository();
-
             string email = emailbox.Text;
             string password = passwordbox.Text;
             string username = usernamebox.Text;
             string uploadedpath = uploadingpath;
 
-            signup.Signup(email, password, username, uploadedpath);
-            MessageBox.Show("Signup successful!");
+            if (
+                string.IsNullOrWhiteSpace(email) ||
+                string.IsNullOrWhiteSpace(password) ||
+                string.IsNullOrWhiteSpace(username) ||
+                string.IsNullOrWhiteSpace(uploadedpath)
+            )
+            {
+                MessageBox.Show(
+                    "Please fill all fields.",
+                    "Warning",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
 
-            login loadlogin = new login();
-            loadlogin.Show();
+                return;
+            }
+
+            signup.Signup(email, password, username, uploadedpath,this);
         }
     }
 }
