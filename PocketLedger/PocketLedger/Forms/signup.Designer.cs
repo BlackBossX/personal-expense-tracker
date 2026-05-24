@@ -32,16 +32,18 @@
             label3 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            textBox2 = new TextBox();
+            passwordbox = new TextBox();
             panel1 = new Panel();
-            textBox1 = new TextBox();
+            emailbox = new TextBox();
             pictureBox3 = new PictureBox();
-            label2 = new Label();
+            username = new Label();
             panel3 = new Panel();
-            textBox3 = new TextBox();
+            usernamebox = new TextBox();
             label4 = new Label();
             panel4 = new Panel();
-            textBox4 = new TextBox();
+            uploadedlabel = new Label();
+            uploadpath = new Label();
+            uploadbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
@@ -87,37 +89,37 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(textBox2);
+            panel2.Controls.Add(passwordbox);
             panel2.Location = new Point(308, 375);
             panel2.Margin = new Padding(4, 3, 4, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(300, 44);
             panel2.TabIndex = 13;
             // 
-            // textBox2
+            // passwordbox
             // 
-            textBox2.Location = new Point(4, 10);
-            textBox2.Margin = new Padding(4, 3, 4, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(419, 23);
-            textBox2.TabIndex = 6;
+            passwordbox.Location = new Point(4, 10);
+            passwordbox.Margin = new Padding(4, 3, 4, 3);
+            passwordbox.Name = "passwordbox";
+            passwordbox.Size = new Size(419, 23);
+            passwordbox.TabIndex = 6;
             // 
             // panel1
             // 
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(emailbox);
             panel1.Location = new Point(308, 151);
             panel1.Margin = new Padding(4, 3, 4, 3);
             panel1.Name = "panel1";
             panel1.Size = new Size(300, 44);
             panel1.TabIndex = 12;
             // 
-            // textBox1
+            // emailbox
             // 
-            textBox1.Location = new Point(4, 10);
-            textBox1.Margin = new Padding(4, 3, 4, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(419, 23);
-            textBox1.TabIndex = 6;
+            emailbox.Location = new Point(4, 10);
+            emailbox.Margin = new Padding(4, 3, 4, 3);
+            emailbox.Name = "emailbox";
+            emailbox.Size = new Size(419, 23);
+            emailbox.TabIndex = 6;
             // 
             // pictureBox3
             // 
@@ -129,35 +131,36 @@
             pictureBox3.Size = new Size(117, 58);
             pictureBox3.TabIndex = 16;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
-            // label2
+            // username
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(307, 209);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(75, 23);
-            label2.TabIndex = 17;
-            label2.Text = "Mobile No:";
+            username.AutoSize = true;
+            username.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            username.ForeColor = Color.White;
+            username.Location = new Point(307, 209);
+            username.Margin = new Padding(4, 0, 4, 0);
+            username.Name = "username";
+            username.Size = new Size(84, 23);
+            username.TabIndex = 17;
+            username.Text = "User Name:";
             // 
             // panel3
             // 
-            panel3.Controls.Add(textBox3);
+            panel3.Controls.Add(usernamebox);
             panel3.Location = new Point(308, 228);
             panel3.Margin = new Padding(4, 3, 4, 3);
             panel3.Name = "panel3";
             panel3.Size = new Size(300, 44);
             panel3.TabIndex = 13;
             // 
-            // textBox3
+            // usernamebox
             // 
-            textBox3.Location = new Point(4, 10);
-            textBox3.Margin = new Padding(4, 3, 4, 3);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(419, 23);
-            textBox3.TabIndex = 6;
+            usernamebox.Location = new Point(4, 10);
+            usernamebox.Margin = new Padding(4, 3, 4, 3);
+            usernamebox.Name = "usernamebox";
+            usernamebox.Size = new Size(419, 23);
+            usernamebox.TabIndex = 6;
             // 
             // label4
             // 
@@ -173,20 +176,44 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(textBox4);
+            panel4.Controls.Add(uploadedlabel);
+            panel4.Controls.Add(uploadpath);
+            panel4.Controls.Add(uploadbtn);
             panel4.Location = new Point(308, 302);
             panel4.Margin = new Padding(4, 3, 4, 3);
             panel4.Name = "panel4";
             panel4.Size = new Size(300, 44);
             panel4.TabIndex = 14;
+            panel4.Paint += panel4_Paint;
             // 
-            // textBox4
+            // uploadedlabel
             // 
-            textBox4.Location = new Point(4, 10);
-            textBox4.Margin = new Padding(4, 3, 4, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(419, 23);
-            textBox4.TabIndex = 6;
+            uploadedlabel.AutoSize = true;
+            uploadedlabel.ForeColor = Color.White;
+            uploadedlabel.Location = new Point(89, 13);
+            uploadedlabel.Name = "uploadedlabel";
+            uploadedlabel.Size = new Size(12, 15);
+            uploadedlabel.TabIndex = 2;
+            uploadedlabel.Text = "-";
+            // 
+            // uploadpath
+            // 
+            uploadpath.AutoSize = true;
+            uploadpath.ForeColor = Color.White;
+            uploadpath.Location = new Point(84, 13);
+            uploadpath.Name = "uploadpath";
+            uploadpath.Size = new Size(0, 15);
+            uploadpath.TabIndex = 1;
+            // 
+            // uploadbtn
+            // 
+            uploadbtn.Location = new Point(3, 9);
+            uploadbtn.Name = "uploadbtn";
+            uploadbtn.Size = new Size(75, 23);
+            uploadbtn.TabIndex = 0;
+            uploadbtn.Text = "Upload";
+            uploadbtn.UseVisualStyleBackColor = true;
+            uploadbtn.Click += button1_Click;
             // 
             // signup
             // 
@@ -197,7 +224,7 @@
             Controls.Add(panel4);
             Controls.Add(label4);
             Controls.Add(panel3);
-            Controls.Add(label2);
+            Controls.Add(username);
             Controls.Add(pictureBox3);
             Controls.Add(label3);
             Controls.Add(label1);
@@ -229,15 +256,17 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox passwordbox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox emailbox;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label username;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox usernamebox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox4;
+        private Label uploadpath;
+        private Button uploadbtn;
+        private Label uploadedlabel;
     }
 }
