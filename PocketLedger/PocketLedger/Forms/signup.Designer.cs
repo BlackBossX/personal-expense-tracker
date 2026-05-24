@@ -220,7 +220,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(933, 531);
             Controls.Add(panel4);
             Controls.Add(label4);
             Controls.Add(panel3);

@@ -24,7 +24,7 @@ namespace PocketLedger
             string password = passwordbox.Text;
 
             Database.UserRepository userRepository = new Database.UserRepository();
-            userRepository.Login(email, password,this);
+            userRepository.Login(email, password, this);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -35,9 +35,12 @@ namespace PocketLedger
         private void passwordbox_TextChanged(object sender, EventArgs e)
         {
 
-            string password = emailbox.Text;    
+            string password = emailbox.Text;
         }
 
+        private void login_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

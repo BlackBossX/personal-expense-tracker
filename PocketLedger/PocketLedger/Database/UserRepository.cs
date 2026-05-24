@@ -26,7 +26,7 @@ namespace PocketLedger.Database
                 if (decryptedIsValid)
                 {
                     MessageBox.Show("Login successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Dashboard dashBoardLoad = new Dashboard();
+                    Dashboard dashBoardLoad = new Dashboard(email);
                     dashBoardLoad.Show();
                     loginForm.Close();
                 }
@@ -47,20 +47,34 @@ namespace PocketLedger.Database
 
 
 
-        public void Signup(string email, string password,string username,string path)
+        public void Signup(string email, string password,string username,string path,signup signupForm)
         {
-            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
-            using var conn = DbConnection.GetConnection();
-            conn.Open();
-            string query =
-                "INSERT INTO users (Email, PasswordHash,Username,ProfilePicture) VALUES (@email, @password,@username,@path)";
-            using var cmd = new MySqlCommand(query, conn);
+            try
+            {
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+                using var conn = DbConnection.GetConnection();
+                conn.Open();
+                string query =
+                    "INSERT INTO users (Email, PasswordHash,Username,ProfilePicture) VALUES (@email, @password,@username,@path)";
+                using var cmd = new MySqlCommand(query, conn);
 
-            cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@password", hashedPassword);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@path", path);
-            int rowsAffected = cmd.ExecuteNonQuery();
+                cmd.Parameters.AddWithValue("@email", email);
+                cmd.Parameters.AddWithValue("@password", hashedPassword);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@path", path);
+                int rowsAffected = cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Signup successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                login loginPage = new login();
+                loginPage.Show();
+                signupForm.Close();
+            }
+            catch (Exception ex) 
+            { 
+                MessageBox.Show("An error occurred during signup. Please try again.", "Signup Failed",
+                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         
         }
     }

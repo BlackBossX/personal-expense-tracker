@@ -143,7 +143,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
-            ClientSize = new Size(933, 519);
+            ClientSize = new Size(933, 531);
             Controls.Add(pictureBox2);
             Controls.Add(label3);
             Controls.Add(label1);
@@ -154,6 +154,7 @@
             Margin = new Padding(4, 3, 4, 3);
             Name = "login";
             Text = "Login";
+            Load += login_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

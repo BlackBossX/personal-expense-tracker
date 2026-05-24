@@ -1,3 +1,5 @@
+using PocketLedger.Forms;
+
 namespace PocketLedger
 {
     internal static class Program
