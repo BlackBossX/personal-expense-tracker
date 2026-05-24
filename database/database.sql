@@ -4,7 +4,6 @@ USE pocketledgerDB;
 -- Users Table
 CREATE TABLE Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
-    FullName VARCHAR(100) NOT NULL,
     Username VARCHAR(50) NOT NULL UNIQUE,
     Email VARCHAR(100) NOT NULL UNIQUE,
     PasswordHash VARCHAR(255) NOT NULL,

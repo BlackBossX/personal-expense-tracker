@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using MySql.Data.MySqlClient;
+using BCrypt.Net;
 
 namespace PocketLedger.Database
 {
@@ -32,17 +33,21 @@ namespace PocketLedger.Database
         }
 
 
-        public bool Signup(string email, string password)
+        public void Signup(string email, string password,string username,string path)
         {
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
             using var conn = DbConnection.GetConnection();
             conn.Open();
             string query =
-                "INSERT INTO users (Email, PasswordHash) VALUES (@email, @password)";
+                "INSERT INTO users (Email, PasswordHash,Username,ProfilePicture) VALUES (@email, @password,@username,@path)";
             using var cmd = new MySqlCommand(query, conn);
+
             cmd.Parameters.AddWithValue("@email", email);
-            cmd.Parameters.AddWithValue("@password", password);
+            cmd.Parameters.AddWithValue("@password", hashedPassword);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@path", path);
             int rowsAffected = cmd.ExecuteNonQuery();
-            return rowsAffected > 0;
+        
         }
     }
 }
