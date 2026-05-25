@@ -45,8 +45,26 @@ namespace PocketLedger.Forms
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            GraphicsPath path = new GraphicsPath();
 
+
+            string greetingText;
+            int hour = DateTime.Now.Hour;
+
+            if (hour < 12)
+            {
+                greetingText = "Good Morning";
+            }
+            else if (hour < 18)
+            {
+                greetingText = "Good Afternoon";
+            }
+            else
+            {
+                greetingText = "Good Evening";
+            }
+
+
+            GraphicsPath path = new GraphicsPath();
             path.AddEllipse(
                 0,
                 0,
@@ -60,15 +78,17 @@ namespace PocketLedger.Forms
 
             profilepic.Paint += Profilepic_Paint;
 
-            Database.DashBoardLoading dashBoardLoading = new Database.DashBoardLoading();
-            dashBoardLoading.profilePicLoad(loggedEmail, this);
-            dashBoardLoading.greeting(loggedEmail, this);
+            Database.DataFetch dashBoardLoading = new Database.DataFetch();
+            string ProPicPath = dashBoardLoading.profilePicLoad(loggedEmail);
+            profilepic.Image = Image.FromFile(ProPicPath);
+
+            profilepic.SizeMode = PictureBoxSizeMode.Zoom;
+
+            string Name = dashBoardLoading.nameLoading(loggedEmail);
+            greeting.Text = $"{greetingText}, {Name}!";
         }
 
-        private void profilepic_Click(object sender, EventArgs e)
-        {
 
-        }
 
 
         private void Profilepic_Paint(object sender, PaintEventArgs e)
@@ -122,8 +142,6 @@ namespace PocketLedger.Forms
             panel.BackColor = activeColor;
 
             ResetSidebar();
-
-
         }
 
         private void ResetSidebar()
@@ -136,7 +154,25 @@ namespace PocketLedger.Forms
             transactionpanel.BackColor = originalColor;
         }
 
+
+
+
         private void transactionpanel_Paint(object sender, PaintEventArgs e)
+        {
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            profile profileLoad = new profile(loggedEmail);
+            profileLoad.Show();
+        }
+
+        private void profilepic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void greeting_Click(object sender, EventArgs e)
         {
         }
     }

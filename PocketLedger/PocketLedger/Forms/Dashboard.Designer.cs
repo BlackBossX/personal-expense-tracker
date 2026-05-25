@@ -103,6 +103,7 @@
             pictureBox1.Size = new Size(27, 27);
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
             // 
             // pictureBox2
             // 
@@ -326,10 +327,10 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.white_logo;
-            pictureBox7.Location = new Point(342, 39);
+            pictureBox7.Location = new Point(366, 42);
             pictureBox7.Margin = new Padding(4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(298, 84);
+            pictureBox7.Size = new Size(277, 80);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 9;
             pictureBox7.TabStop = false;
@@ -355,6 +356,7 @@
             greeting.Size = new Size(21, 28);
             greeting.TabIndex = 12;
             greeting.Text = "-";
+            greeting.Click += greeting_Click;
             // 
             // Dashboard
             // 
