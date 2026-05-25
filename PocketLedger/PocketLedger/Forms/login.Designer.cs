@@ -46,7 +46,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.white_logo;
-            pictureBox1.Location = new Point(329, 38);
+            pictureBox1.Location = new Point(337, 40);
             pictureBox1.Margin = new Padding(4, 3, 4, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(251, 73);
@@ -59,7 +59,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Poppins SemiBold", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(308, 140);
+            label2.Location = new Point(329, 154);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(259, 51);
@@ -107,7 +107,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(309, 223);
+            label1.Location = new Point(309, 233);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(51, 23);
@@ -119,7 +119,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Poppins", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(309, 300);
+            label3.Location = new Point(309, 310);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(77, 23);

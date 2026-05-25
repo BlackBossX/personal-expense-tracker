@@ -13,7 +13,7 @@ namespace project
 {
     public partial class AddIncome : Form
     {
-        Dashboard dashboard;
+        Dashboard dashboard = new Dashboard();
 
         public AddIncome(Dashboard dashboardForm)
         {
@@ -30,7 +30,7 @@ namespace project
             comboBox2.Items.Add("Investment");
         }
 
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -101,6 +101,11 @@ namespace project
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void AddIncome_Load(object sender, EventArgs e)
         {
 
         }

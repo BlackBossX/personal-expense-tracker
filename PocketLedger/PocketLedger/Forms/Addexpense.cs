@@ -108,5 +108,10 @@ namespace project
 
             addIncome.Show();
         }
+
+        private void Addexpense_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -107,7 +107,7 @@
             label1.BackColor = Color.FromArgb(3, 7, 42);
             label1.Font = new Font("Microsoft Sans Serif", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(332, 246);
+            label1.Location = new Point(351, 245);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(208, 18);
@@ -120,7 +120,7 @@
             label2.BackColor = Color.FromArgb(3, 7, 42);
             label2.Font = new Font("Microsoft Sans Serif", 8.999999F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonFace;
-            label2.Location = new Point(151, 291);
+            label2.Location = new Point(230, 290);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(465, 45);
@@ -132,7 +132,7 @@
             // 
             pictureBox3.BackgroundImage = Properties.Resources.signup1;
             pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(469, 395);
+            pictureBox3.Location = new Point(468, 395);
             pictureBox3.Margin = new Padding(4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(116, 58);
@@ -144,7 +144,7 @@
             // 
             pictureBox2.BackgroundImage = Properties.Resources.login1;
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Location = new Point(335, 395);
+            pictureBox2.Location = new Point(334, 395);
             pictureBox2.Margin = new Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(116, 58);
