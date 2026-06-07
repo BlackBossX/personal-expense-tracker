@@ -77,5 +77,27 @@ namespace PocketLedger.Database
             }
         
         }
+
+        public bool UpdateUserProfile(string currentEmail, string newUsername, string newPicPath)
+        {
+            try
+            {
+                using var conn = DbConnection.GetConnection();
+                conn.Open();
+                string query = "UPDATE users SET Username=@username, ProfilePicture=@path WHERE Email=@currentEmail";
+                using var cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", newUsername);
+                cmd.Parameters.AddWithValue("@path", newPicPath);
+                cmd.Parameters.AddWithValue("@currentEmail", currentEmail);
+                
+                int rows = cmd.ExecuteNonQuery();
+                return rows > 0;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Failed to update profile: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
     }
 }

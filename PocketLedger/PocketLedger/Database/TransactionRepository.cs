@@ -6,7 +6,7 @@ namespace PocketLedger.Database
 {
     internal class TransactionRepository
     {
-        public DataTable GetTransactions(string category = "All", string type = "All",
+        public DataTable GetTransactions(string email, string category = "All", string type = "All",
                                          DateTime? from = null, DateTime? to = null,
                                          string search = "")
         {
@@ -23,7 +23,8 @@ namespace PocketLedger.Database
                     t.Date
                 FROM Transactions t
                 LEFT JOIN Categories c ON t.CategoryID = c.CategoryID
-                WHERE 1=1";
+                INNER JOIN Users u ON t.UserID = u.UserID
+                WHERE u.Email = @email";
 
             if (category != "All")
                 query += " AND c.CategoryName = @category";
@@ -39,6 +40,7 @@ namespace PocketLedger.Database
             query += " ORDER BY t.TransactionID ASC";
 
             using var cmd = new MySqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@email", email);
 
             if (category != "All")
                 cmd.Parameters.AddWithValue("@category", category);

@@ -32,45 +32,45 @@
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
             toolsToolStripMenuItem = new ToolStripMenuItem();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            panel1 = new Panel();
-            historypanel = new Panel();
-            label6 = new Label();
-            expensepanel = new Panel();
-            label5 = new Label();
-            incomepanel = new Panel();
-            label4 = new Label();
-            transactionpanel = new Panel();
-            label3 = new Label();
-            homepanel = new Panel();
-            label2 = new Label();
-            profilepanel = new Panel();
-            label1 = new Label();
-            profilepic = new PictureBox();
             pictureBox7 = new PictureBox();
             label8 = new Label();
             greeting = new Label();
+            panel1 = new Panel();
+            historypanel = new Panel();
+            label6 = new Label();
+            pictureBox6 = new PictureBox();
+            expensepanel = new Panel();
+            pictureBox5 = new PictureBox();
+            label5 = new Label();
+            incomepanel = new Panel();
+            label4 = new Label();
+            pictureBox4 = new PictureBox();
+            transactionpanel = new Panel();
+            label3 = new Label();
+            pictureBox3 = new PictureBox();
+            homepanel = new Panel();
+            label2 = new Label();
+            pictureBox2 = new PictureBox();
+            profilepanel = new Panel();
+            pictureBox1 = new PictureBox();
+            label1 = new Label();
+            profilepic = new PictureBox();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel1.SuspendLayout();
             historypanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             expensepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             incomepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             transactionpanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             homepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             profilepanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)profilepic).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +78,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, toolsToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(933, 24);
+            menuStrip1.Size = new Size(1199, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -94,70 +94,39 @@
             toolsToolStripMenuItem.Size = new Size(47, 20);
             toolsToolStripMenuItem.Text = "Tools";
             // 
-            // pictureBox1
+            // pictureBox7
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(52, 11);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(27, 27);
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
+            pictureBox7.Image = Properties.Resources.white_logo;
+            pictureBox7.Location = new Point(494, 48);
+            pictureBox7.Margin = new Padding(4);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(277, 80);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 9;
+            pictureBox7.TabStop = false;
             // 
-            // pictureBox2
+            // label8
             // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Location = new Point(51, 13);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(27, 27);
-            pictureBox2.TabIndex = 3;
-            pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
+            label8.AutoSize = true;
+            label8.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.White;
+            label8.Location = new Point(214, 196);
+            label8.Name = "label8";
+            label8.Size = new Size(284, 28);
+            label8.TabIndex = 11;
+            label8.Text = "Let's manage your finances today.";
             // 
-            // pictureBox3
+            // greeting
             // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(51, 11);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(27, 27);
-            pictureBox3.TabIndex = 4;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
-            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox4.Location = new Point(50, 13);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(27, 27);
-            pictureBox4.TabIndex = 5;
-            pictureBox4.TabStop = false;
-            pictureBox4.Click += pictureBox4_Click;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
-            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox5.Location = new Point(50, 11);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(27, 27);
-            pictureBox5.TabIndex = 6;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
-            pictureBox6.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox6.Location = new Point(51, 9);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(27, 27);
-            pictureBox6.TabIndex = 7;
-            pictureBox6.TabStop = false;
-            pictureBox6.Click += pictureBox6_Click;
+            greeting.AutoSize = true;
+            greeting.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            greeting.ForeColor = Color.White;
+            greeting.Location = new Point(214, 168);
+            greeting.Name = "greeting";
+            greeting.Size = new Size(21, 28);
+            greeting.TabIndex = 12;
+            greeting.Text = "-";
+            greeting.Click += greeting_Click;
             // 
             // panel1
             // 
@@ -171,53 +140,73 @@
             panel1.Controls.Add(profilepic);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 24);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(130, 507);
-            panel1.TabIndex = 8;
+            panel1.Size = new Size(168, 684);
+            panel1.TabIndex = 15;
             // 
             // historypanel
             // 
             historypanel.Controls.Add(label6);
             historypanel.Controls.Add(pictureBox6);
-            historypanel.Location = new Point(2, 442);
+            historypanel.Location = new Point(2, 589);
+            historypanel.Margin = new Padding(3, 4, 3, 4);
             historypanel.Name = "historypanel";
-            historypanel.Size = new Size(127, 63);
+            historypanel.Size = new Size(163, 84);
             historypanel.TabIndex = 20;
-            historypanel.Click += Sidebar_Click;
-            historypanel.MouseEnter += Sidebar_MouseEnter;
-            historypanel.MouseLeave += Sidebar_MouseLeave;
             // 
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Poppins", 8.25F);
+            label6.Font = new Font("Poppins", 9F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(39, 37);
+            label6.Location = new Point(58, 49);
             label6.Name = "label6";
-            label6.Size = new Size(47, 19);
+            label6.Size = new Size(50, 22);
             label6.TabIndex = 14;
             label6.Text = "History";
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImage = (Image)resources.GetObject("pictureBox6.BackgroundImage");
+            pictureBox6.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox6.Location = new Point(65, 12);
+            pictureBox6.Margin = new Padding(3, 4, 3, 4);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(35, 36);
+            pictureBox6.TabIndex = 7;
+            pictureBox6.TabStop = false;
+            pictureBox6.Click += pictureBox6_Click_1;
             // 
             // expensepanel
             // 
             expensepanel.Controls.Add(pictureBox5);
             expensepanel.Controls.Add(label5);
-            expensepanel.Location = new Point(2, 377);
+            expensepanel.Location = new Point(2, 503);
+            expensepanel.Margin = new Padding(3, 4, 3, 4);
             expensepanel.Name = "expensepanel";
-            expensepanel.Size = new Size(127, 63);
+            expensepanel.Size = new Size(163, 84);
             expensepanel.TabIndex = 19;
-            expensepanel.Click += Sidebar_Click;
-            expensepanel.MouseEnter += Sidebar_MouseEnter;
-            expensepanel.MouseLeave += Sidebar_MouseLeave;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackgroundImage = (Image)resources.GetObject("pictureBox5.BackgroundImage");
+            pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox5.Location = new Point(64, 15);
+            pictureBox5.Margin = new Padding(3, 4, 3, 4);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(35, 36);
+            pictureBox5.TabIndex = 6;
+            pictureBox5.TabStop = false;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Poppins", 8.25F);
+            label5.Font = new Font("Poppins", 9F);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(38, 37);
+            label5.Location = new Point(55, 49);
             label5.Name = "label5";
-            label5.Size = new Size(54, 19);
+            label5.Size = new Size(58, 22);
             label5.TabIndex = 13;
             label5.Text = "Expense";
             // 
@@ -225,177 +214,180 @@
             // 
             incomepanel.Controls.Add(label4);
             incomepanel.Controls.Add(pictureBox4);
-            incomepanel.Location = new Point(2, 312);
+            incomepanel.Location = new Point(2, 416);
+            incomepanel.Margin = new Padding(3, 4, 3, 4);
             incomepanel.Name = "incomepanel";
-            incomepanel.Size = new Size(127, 63);
+            incomepanel.Size = new Size(163, 84);
             incomepanel.TabIndex = 18;
-            incomepanel.Click += Sidebar_Click;
-            incomepanel.MouseEnter += Sidebar_MouseEnter;
-            incomepanel.MouseLeave += Sidebar_MouseLeave;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Poppins", 8.25F);
+            label4.Font = new Font("Poppins", 9F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(39, 38);
+            label4.Location = new Point(57, 51);
             label4.Name = "label4";
-            label4.Size = new Size(51, 19);
+            label4.Size = new Size(55, 22);
             label4.TabIndex = 12;
             label4.Text = "Income";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox4.Location = new Point(64, 17);
+            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(35, 36);
+            pictureBox4.TabIndex = 5;
+            pictureBox4.TabStop = false;
             // 
             // transactionpanel
             // 
             transactionpanel.Controls.Add(label3);
             transactionpanel.Controls.Add(pictureBox3);
-            transactionpanel.Location = new Point(1, 247);
+            transactionpanel.Location = new Point(1, 329);
+            transactionpanel.Margin = new Padding(3, 4, 3, 4);
             transactionpanel.Name = "transactionpanel";
-            transactionpanel.Size = new Size(127, 63);
+            transactionpanel.Size = new Size(163, 84);
             transactionpanel.TabIndex = 17;
-            transactionpanel.Click += Sidebar_Click;
-            transactionpanel.Paint += transactionpanel_Paint;
-            transactionpanel.MouseEnter += Sidebar_MouseEnter;
-            transactionpanel.MouseLeave += Sidebar_MouseLeave;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Poppins", 8.25F);
+            label3.Font = new Font("Poppins", 9F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(26, 39);
+            label3.Location = new Point(46, 52);
             label3.Name = "label3";
-            label3.Size = new Size(74, 19);
+            label3.Size = new Size(80, 22);
             label3.TabIndex = 11;
             label3.Text = "Transaction";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(65, 15);
+            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(35, 36);
+            pictureBox3.TabIndex = 4;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click_1;
             // 
             // homepanel
             // 
             homepanel.Controls.Add(label2);
             homepanel.Controls.Add(pictureBox2);
-            homepanel.Location = new Point(1, 182);
+            homepanel.Location = new Point(1, 243);
+            homepanel.Margin = new Padding(3, 4, 3, 4);
             homepanel.Name = "homepanel";
-            homepanel.Size = new Size(127, 63);
+            homepanel.Size = new Size(163, 84);
             homepanel.TabIndex = 16;
-            homepanel.Click += Sidebar_Click;
-            homepanel.MouseEnter += Sidebar_MouseEnter;
-            homepanel.MouseLeave += Sidebar_MouseLeave;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Poppins", 8.25F);
+            label2.Font = new Font("Poppins", 9F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(44, 43);
+            label2.Location = new Point(61, 57);
             label2.Name = "label2";
-            label2.Size = new Size(42, 19);
+            label2.Size = new Size(45, 22);
             label2.TabIndex = 10;
             label2.Text = "Home";
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Location = new Point(65, 17);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(35, 36);
+            pictureBox2.TabIndex = 3;
+            pictureBox2.TabStop = false;
             // 
             // profilepanel
             // 
             profilepanel.Controls.Add(pictureBox1);
             profilepanel.Controls.Add(label1);
-            profilepanel.Location = new Point(1, 118);
+            profilepanel.Location = new Point(1, 157);
+            profilepanel.Margin = new Padding(3, 4, 3, 4);
             profilepanel.Name = "profilepanel";
-            profilepanel.Size = new Size(127, 63);
+            profilepanel.Size = new Size(163, 84);
             profilepanel.TabIndex = 15;
-            profilepanel.Click += Sidebar_Click;
-            profilepanel.Paint += panel2_Paint;
-            profilepanel.MouseEnter += Sidebar_MouseEnter;
-            profilepanel.MouseLeave += Sidebar_MouseLeave;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Location = new Point(66, 15);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(35, 36);
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_2;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Poppins", 8.25F);
+            label1.Font = new Font("Poppins", 9F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(45, 41);
+            label1.Location = new Point(62, 55);
             label1.Name = "label1";
-            label1.Size = new Size(43, 19);
+            label1.Size = new Size(46, 22);
             label1.TabIndex = 9;
             label1.Text = "Profile";
             // 
             // profilepic
             // 
-            profilepic.Location = new Point(26, 18);
+            profilepic.Location = new Point(34, 24);
+            profilepic.Margin = new Padding(3, 4, 3, 4);
             profilepic.Name = "profilepic";
-            profilepic.Size = new Size(80, 80);
+            profilepic.Size = new Size(105, 105);
             profilepic.TabIndex = 8;
             profilepic.TabStop = false;
-            profilepic.Click += profilepic_Click;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = Properties.Resources.white_logo;
-            pictureBox7.Location = new Point(366, 42);
-            pictureBox7.Margin = new Padding(4);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(277, 80);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 9;
-            pictureBox7.TabStop = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(171, 197);
-            label8.Name = "label8";
-            label8.Size = new Size(284, 28);
-            label8.TabIndex = 11;
-            label8.Text = "Let's manage your finances today.";
-            // 
-            // greeting
-            // 
-            greeting.AutoSize = true;
-            greeting.Font = new Font("Poppins", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            greeting.ForeColor = Color.White;
-            greeting.Location = new Point(171, 163);
-            greeting.Name = "greeting";
-            greeting.Size = new Size(21, 28);
-            greeting.TabIndex = 12;
-            greeting.Text = "-";
-            greeting.Click += greeting_Click;
             // 
             // Dashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
-            ClientSize = new Size(933, 531);
+            ClientSize = new Size(1199, 708);
+            Controls.Add(panel1);
             Controls.Add(greeting);
             Controls.Add(label8);
             Controls.Add(pictureBox7);
-            Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            KeyPreview = true;
             MainMenuStrip = menuStrip1;
             Name = "Dashboard";
             Text = "Dashboard";
             Load += Dashboard_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel1.ResumeLayout(false);
             historypanel.ResumeLayout(false);
             historypanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             expensepanel.ResumeLayout(false);
             expensepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             incomepanel.ResumeLayout(false);
             incomepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             transactionpanel.ResumeLayout(false);
             transactionpanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             homepanel.ResumeLayout(false);
             homepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             profilepanel.ResumeLayout(false);
             profilepanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)profilepic).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -404,28 +396,28 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem fileToolStripMenuItem;
         private ToolStripMenuItem toolsToolStripMenuItem;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        private Panel panel1;
-        private Label label1;
-        public PictureBox profilepic;
-        private Label label6;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
         private PictureBox pictureBox7;
         private Label label8;
         public Label greeting;
-        private Panel homepanel;
-        private Panel transactionpanel;
-        private Panel profilepanel;
+        private Panel panel1;
         private Panel historypanel;
+        private Label label6;
+        private PictureBox pictureBox6;
         private Panel expensepanel;
+        private PictureBox pictureBox5;
+        private Label label5;
         private Panel incomepanel;
+        private Label label4;
+        private PictureBox pictureBox4;
+        private Panel transactionpanel;
+        private Label label3;
+        private PictureBox pictureBox3;
+        private Panel homepanel;
+        private Label label2;
+        private PictureBox pictureBox2;
+        private Panel profilepanel;
+        private PictureBox pictureBox1;
+        private Label label1;
+        public PictureBox profilepic;
     }
 }

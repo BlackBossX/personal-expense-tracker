@@ -100,6 +100,7 @@
             passwordbox.Name = "passwordbox";
             passwordbox.Size = new Size(419, 23);
             passwordbox.TabIndex = 6;
+            passwordbox.UseSystemPasswordChar = true;
             passwordbox.TextChanged += passwordbox_TextChanged;
             // 
             // label1
