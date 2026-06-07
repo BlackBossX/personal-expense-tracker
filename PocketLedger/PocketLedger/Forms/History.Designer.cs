@@ -539,6 +539,7 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "History";
             Text = "History";
+            this.Load += new EventHandler(this.History_Load);
             panel1.ResumeLayout(false);
             historypanel.ResumeLayout(false);
             historypanel.PerformLayout();
