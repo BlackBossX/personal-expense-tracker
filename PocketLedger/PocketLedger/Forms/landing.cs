@@ -19,7 +19,7 @@ namespace PocketLedger
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)

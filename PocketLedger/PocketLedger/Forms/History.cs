@@ -18,7 +18,6 @@ namespace PocketLedger.Forms
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.MinimizeBox = false;
             loggedEmail = email;
         }
 
@@ -163,6 +162,11 @@ namespace PocketLedger.Forms
         }
 
         private void dgvTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
