@@ -131,11 +131,11 @@
             // lblCategory
             // 
             lblCategory.AutoSize = true;
-            lblCategory.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCategory.ForeColor = Color.FromArgb(96, 112, 128);
-            lblCategory.Location = new Point(52, 14);
+            lblCategory.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            lblCategory.ForeColor = Color.FromArgb(192, 255, 192);
+            lblCategory.Location = new Point(52, 11);
             lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(61, 13);
+            lblCategory.Size = new Size(71, 22);
             lblCategory.TabIndex = 7;
             lblCategory.Text = "Category:";
             // 
@@ -151,11 +151,11 @@
             // lblType
             // 
             lblType.AutoSize = true;
-            lblType.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblType.ForeColor = Color.FromArgb(96, 112, 128);
-            lblType.Location = new Point(61, 13);
+            lblType.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            lblType.ForeColor = Color.FromArgb(192, 255, 192);
+            lblType.Location = new Point(61, 10);
             lblType.Name = "lblType";
-            lblType.Size = new Size(39, 13);
+            lblType.Size = new Size(43, 22);
             lblType.TabIndex = 5;
             lblType.Text = "Type:";
             // 
@@ -172,22 +172,22 @@
             // lblTo
             // 
             lblTo.AutoSize = true;
-            lblTo.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTo.ForeColor = Color.FromArgb(96, 112, 128);
-            lblTo.Location = new Point(70, 15);
+            lblTo.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            lblTo.ForeColor = Color.FromArgb(192, 255, 192);
+            lblTo.Location = new Point(70, 10);
             lblTo.Name = "lblTo";
-            lblTo.Size = new Size(26, 13);
+            lblTo.Size = new Size(28, 22);
             lblTo.TabIndex = 3;
             lblTo.Text = "To:";
             // 
             // lblFrom
             // 
             lblFrom.AutoSize = true;
-            lblFrom.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFrom.ForeColor = Color.FromArgb(96, 112, 128);
-            lblFrom.Location = new Point(63, 16);
+            lblFrom.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            lblFrom.ForeColor = Color.FromArgb(192, 255, 192);
+            lblFrom.Location = new Point(63, 13);
             lblFrom.Name = "lblFrom";
-            lblFrom.Size = new Size(38, 13);
+            lblFrom.Size = new Size(46, 22);
             lblFrom.TabIndex = 2;
             lblFrom.Text = "From:";
             // 
@@ -210,7 +210,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.white_logo;
-            pictureBox7.Location = new Point(956, 54);
+            pictureBox7.Location = new Point(956, 46);
             pictureBox7.Margin = new Padding(6, 5, 6, 5);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(227, 46);
@@ -291,11 +291,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.FromArgb(96, 112, 128);
-            label1.Location = new Point(59, 16);
+            label1.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(192, 255, 192);
+            label1.Location = new Point(59, 10);
             label1.Name = "label1";
-            label1.Size = new Size(55, 13);
+            label1.Size = new Size(58, 22);
             label1.TabIndex = 3;
             label1.Text = "Search: ";
             label1.Click += label1_Click;

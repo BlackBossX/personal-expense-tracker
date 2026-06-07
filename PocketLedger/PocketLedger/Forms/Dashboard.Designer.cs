@@ -158,11 +158,11 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Font = new Font("Microsoft Sans Serif", 8.25F);
+            label6.Font = new Font("Poppins", 9F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(62, 49);
+            label6.Location = new Point(58, 49);
             label6.Name = "label6";
-            label6.Size = new Size(39, 13);
+            label6.Size = new Size(50, 22);
             label6.TabIndex = 14;
             label6.Text = "History";
             // 
@@ -202,11 +202,11 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Font = new Font("Microsoft Sans Serif", 8.25F);
+            label5.Font = new Font("Poppins", 9F);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(58, 49);
+            label5.Location = new Point(55, 49);
             label5.Name = "label5";
-            label5.Size = new Size(48, 13);
+            label5.Size = new Size(58, 22);
             label5.TabIndex = 13;
             label5.Text = "Expense";
             // 
@@ -223,11 +223,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Microsoft Sans Serif", 8.25F);
+            label4.Font = new Font("Poppins", 9F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(61, 51);
+            label4.Location = new Point(57, 51);
             label4.Name = "label4";
-            label4.Size = new Size(42, 13);
+            label4.Size = new Size(55, 22);
             label4.TabIndex = 12;
             label4.Text = "Income";
             // 
@@ -255,11 +255,11 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Microsoft Sans Serif", 8.25F);
+            label3.Font = new Font("Poppins", 9F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(53, 52);
+            label3.Location = new Point(46, 52);
             label3.Name = "label3";
-            label3.Size = new Size(63, 13);
+            label3.Size = new Size(80, 22);
             label3.TabIndex = 11;
             label3.Text = "Transaction";
             // 
@@ -288,11 +288,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Microsoft Sans Serif", 8.25F);
+            label2.Font = new Font("Poppins", 9F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(64, 57);
+            label2.Location = new Point(61, 57);
             label2.Name = "label2";
-            label2.Size = new Size(35, 13);
+            label2.Size = new Size(45, 22);
             label2.TabIndex = 10;
             label2.Text = "Home";
             // 
@@ -332,11 +332,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Microsoft Sans Serif", 8.25F);
+            label1.Font = new Font("Poppins", 9F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(66, 55);
+            label1.Location = new Point(62, 55);
             label1.Name = "label1";
-            label1.Size = new Size(36, 13);
+            label1.Size = new Size(46, 22);
             label1.TabIndex = 9;
             label1.Text = "Profile";
             // 
