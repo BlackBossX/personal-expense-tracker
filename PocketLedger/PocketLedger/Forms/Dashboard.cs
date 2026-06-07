@@ -30,7 +30,8 @@ namespace PocketLedger.Forms
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-
+            History historyPage = new History(loggedEmail);
+            historyPage.Show();
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -86,12 +87,13 @@ namespace PocketLedger.Forms
 
             string Name = dashBoardLoading.nameLoading(loggedEmail);
             greeting.Text = $"{greetingText}, {Name}!";
+
         }
 
 
 
 
-        private void Profilepic_Paint(object sender, PaintEventArgs e)
+        public void Profilepic_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
 

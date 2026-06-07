@@ -369,6 +369,7 @@
             Controls.Add(pictureBox7);
             Controls.Add(panel1);
             Controls.Add(menuStrip1);
+            KeyPreview = true;
             MainMenuStrip = menuStrip1;
             Name = "Dashboard";
             Text = "Dashboard";

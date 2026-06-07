@@ -3,6 +3,7 @@ using PocketLedger.Database;
 using System;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace PocketLedger.Forms
@@ -10,10 +11,12 @@ namespace PocketLedger.Forms
     public partial class History : Form
     {
         private readonly TransactionRepository _repo = new TransactionRepository();
+        private string loggedEmail;
 
-        public History()
+        public History(string email)
         {
             InitializeComponent();
+            loggedEmail = email;
         }
 
         private void History_Load(object sender, EventArgs e)
@@ -30,11 +33,49 @@ namespace PocketLedger.Forms
                 txtSearch.GotFocus += txtSearch_GotFocus;
                 txtSearch.LostFocus += txtSearch_LostFocus;
                 txtSearch.TextChanged += txtSearch_TextChanged;
+
+
+                GraphicsPath path = new GraphicsPath();
+                path.AddEllipse(
+                    0,
+                    0,
+                    profilepic.Width - 1,
+                    profilepic.Height - 1
+                );
+
+                profilepic.Region = new Region(path);
+
+                profilepic.SizeMode = PictureBoxSizeMode.Zoom;
+
+                profilepic.Paint += Profilepic_Paint;
+
+                Database.DataFetch dashBoardLoading = new Database.DataFetch();
+                string ProPicPath = dashBoardLoading.profilePicLoad(loggedEmail);
+                profilepic.Image = Image.FromFile(ProPicPath);
+
+                profilepic.SizeMode = PictureBoxSizeMode.Zoom;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Load error: " + ex.Message);
             }
+
+
+        }
+
+        public void Profilepic_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            using Pen pen = new Pen(Color.White, 2);
+
+            e.Graphics.DrawEllipse(
+                pen,
+                2,
+                2,
+                profilepic.Width - 5,
+                profilepic.Height - 5
+            );
         }
 
         private void LoadTransactions(string category = "All", string type = "All",
@@ -43,7 +84,7 @@ namespace PocketLedger.Forms
         {
             try
             {
-                var dt = _repo.GetTransactions(category, type, from, to, search);
+                var dt = _repo.GetTransactions(loggedEmail, category, type, from, to, search);
                 dgvTransactions.DataSource = dt;
 
                 foreach (DataGridViewRow row in dgvTransactions.Rows)
@@ -111,6 +152,11 @@ namespace PocketLedger.Forms
                 string type = cmbType.SelectedItem?.ToString() ?? "All";
                 LoadTransactions(category, type, search: txtSearch.Text);
             }
+        }
+
+        private void profilepic_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

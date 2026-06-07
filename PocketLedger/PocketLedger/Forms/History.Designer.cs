@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(History));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             historypanel = new Panel();
             label6 = new Label();
@@ -56,17 +56,17 @@
             fileToolStripMenuItem = new ToolStripMenuItem();
             toolsToolStripMenuItem = new ToolStripMenuItem();
             pnlFilters = new Panel();
+            txtSearch = new TextBox();
+            btnFilter = new Button();
+            btnClear = new Button();
+            lblCategory = new Label();
+            cmbCategory = new ComboBox();
+            lblType = new Label();
+            cmbType = new ComboBox();
             lblTo = new Label();
             lblFrom = new Label();
             dtpTo = new DateTimePicker();
             dtpFrom = new DateTimePicker();
-            cmbType = new ComboBox();
-            lblType = new Label();
-            cmbCategory = new ComboBox();
-            lblCategory = new Label();
-            btnClear = new Button();
-            btnFilter = new Button();
-            txtSearch = new TextBox();
             pictureBox7 = new PictureBox();
             dgvTransactions = new DataGridView();
             label7 = new Label();
@@ -101,10 +101,10 @@
             panel1.Controls.Add(profilepanel);
             panel1.Controls.Add(profilepic);
             panel1.Dock = DockStyle.Left;
-            panel1.Location = new Point(0, 30);
+            panel1.Location = new Point(0, 25);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(168, 678);
+            panel1.Size = new Size(168, 683);
             panel1.TabIndex = 14;
             // 
             // historypanel
@@ -122,9 +122,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Microsoft Sans Serif", 8.25F);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(51, 49);
+            label6.Location = new Point(62, 49);
             label6.Name = "label6";
-            label6.Size = new Size(52, 17);
+            label6.Size = new Size(39, 13);
             label6.TabIndex = 14;
             label6.Text = "History";
             // 
@@ -165,9 +165,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Microsoft Sans Serif", 8.25F);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(48, 49);
+            label5.Location = new Point(58, 49);
             label5.Name = "label5";
-            label5.Size = new Size(62, 17);
+            label5.Size = new Size(48, 13);
             label5.TabIndex = 13;
             label5.Text = "Expense";
             // 
@@ -186,9 +186,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 8.25F);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(51, 51);
+            label4.Location = new Point(61, 51);
             label4.Name = "label4";
-            label4.Size = new Size(53, 17);
+            label4.Size = new Size(42, 13);
             label4.TabIndex = 12;
             label4.Text = "Income";
             // 
@@ -218,9 +218,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 8.25F);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(34, 52);
+            label3.Location = new Point(53, 52);
             label3.Name = "label3";
-            label3.Size = new Size(83, 17);
+            label3.Size = new Size(63, 13);
             label3.TabIndex = 11;
             label3.Text = "Transaction";
             // 
@@ -250,9 +250,9 @@
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 8.25F);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(56, 57);
+            label2.Location = new Point(64, 57);
             label2.Name = "label2";
-            label2.Size = new Size(45, 17);
+            label2.Size = new Size(35, 13);
             label2.TabIndex = 10;
             label2.Text = "Home";
             // 
@@ -293,9 +293,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 8.25F);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(57, 55);
+            label1.Location = new Point(66, 55);
             label1.Name = "label1";
-            label1.Size = new Size(48, 17);
+            label1.Size = new Size(36, 13);
             label1.TabIndex = 9;
             label1.Text = "Profile";
             // 
@@ -304,9 +304,10 @@
             profilepic.Location = new Point(34, 24);
             profilepic.Margin = new Padding(3, 4, 3, 4);
             profilepic.Name = "profilepic";
-            profilepic.Size = new Size(102, 107);
+            profilepic.Size = new Size(105, 105);
             profilepic.TabIndex = 8;
             profilepic.TabStop = false;
+            profilepic.Click += profilepic_Click;
             // 
             // menuStrip1
             // 
@@ -315,20 +316,20 @@
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(8, 3, 0, 3);
-            menuStrip1.Size = new Size(1199, 30);
+            menuStrip1.Size = new Size(1199, 25);
             menuStrip1.TabIndex = 13;
             menuStrip1.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            fileToolStripMenuItem.Size = new Size(46, 24);
+            fileToolStripMenuItem.Size = new Size(37, 19);
             fileToolStripMenuItem.Text = "File";
             // 
             // toolsToolStripMenuItem
             // 
             toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            toolsToolStripMenuItem.Size = new Size(58, 24);
+            toolsToolStripMenuItem.Size = new Size(47, 19);
             toolsToolStripMenuItem.Text = "Tools";
             // 
             // pnlFilters
@@ -350,97 +351,14 @@
             pnlFilters.Size = new Size(1032, 50);
             pnlFilters.TabIndex = 15;
             // 
-            // lblTo
+            // txtSearch
             // 
-            lblTo.AutoSize = true;
-            lblTo.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTo.ForeColor = Color.FromArgb(96, 112, 128);
-            lblTo.Location = new Point(194, 16);
-            lblTo.Name = "lblTo";
-            lblTo.Size = new Size(30, 16);
-            lblTo.TabIndex = 3;
-            lblTo.Text = "To:";
-            // 
-            // lblFrom
-            // 
-            lblFrom.AutoSize = true;
-            lblFrom.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblFrom.ForeColor = Color.FromArgb(96, 112, 128);
-            lblFrom.Location = new Point(11, 16);
-            lblFrom.Name = "lblFrom";
-            lblFrom.Size = new Size(46, 16);
-            lblFrom.TabIndex = 2;
-            lblFrom.Text = "From:";
-            // 
-            // dtpTo
-            // 
-            dtpTo.Format = DateTimePickerFormat.Short;
-            dtpTo.Location = new Point(225, 12);
-            dtpTo.Name = "dtpTo";
-            dtpTo.Size = new Size(123, 27);
-            dtpTo.TabIndex = 1;
-            // 
-            // dtpFrom
-            // 
-            dtpFrom.Format = DateTimePickerFormat.Short;
-            dtpFrom.Location = new Point(56, 13);
-            dtpFrom.Name = "dtpFrom";
-            dtpFrom.Size = new Size(123, 27);
-            dtpFrom.TabIndex = 0;
-            // 
-            // cmbType
-            // 
-            cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbType.FormattingEnabled = true;
-            cmbType.Items.AddRange(new object[] { "All", "Income", "Expense" });
-            cmbType.Location = new Point(400, 12);
-            cmbType.Name = "cmbType";
-            cmbType.Size = new Size(112, 28);
-            cmbType.TabIndex = 4;
-            // 
-            // lblType
-            // 
-            lblType.AutoSize = true;
-            lblType.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblType.ForeColor = Color.FromArgb(96, 112, 128);
-            lblType.Location = new Point(354, 16);
-            lblType.Name = "lblType";
-            lblType.Size = new Size(47, 16);
-            lblType.TabIndex = 5;
-            lblType.Text = "Type:";
-            // 
-            // cmbCategory
-            // 
-            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(598, 11);
-            cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(112, 28);
-            cmbCategory.TabIndex = 6;
-            // 
-            // lblCategory
-            // 
-            lblCategory.AutoSize = true;
-            lblCategory.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCategory.ForeColor = Color.FromArgb(96, 112, 128);
-            lblCategory.Location = new Point(518, 16);
-            lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(74, 16);
-            lblCategory.TabIndex = 7;
-            lblCategory.Text = "Category:";
-            // 
-            // btnClear
-            // 
-            btnClear.BackColor = Color.FromArgb(26, 48, 112);
-            btnClear.FlatStyle = FlatStyle.Flat;
-            btnClear.Font = new Font("Microsoft Sans Serif", 8.25F);
-            btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(827, 12);
-            btnClear.Name = "btnClear";
-            btnClear.Size = new Size(81, 26);
-            btnClear.TabIndex = 8;
-            btnClear.Text = "Clear";
-            btnClear.UseVisualStyleBackColor = false;
+            txtSearch.Font = new Font("Microsoft Sans Serif", 8.25F);
+            txtSearch.Location = new Point(917, 14);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(101, 20);
+            txtSearch.TabIndex = 10;
+            txtSearch.Text = "Search...";
             // 
             // btnFilter
             // 
@@ -455,14 +373,97 @@
             btnFilter.Text = "Filter";
             btnFilter.UseVisualStyleBackColor = false;
             // 
-            // txtSearch
+            // btnClear
             // 
-            txtSearch.Font = new Font("Microsoft Sans Serif", 8.25F);
-            txtSearch.Location = new Point(917, 14);
-            txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(101, 23);
-            txtSearch.TabIndex = 10;
-            txtSearch.Text = "Search...";
+            btnClear.BackColor = Color.FromArgb(26, 48, 112);
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Microsoft Sans Serif", 8.25F);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(827, 12);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(81, 26);
+            btnClear.TabIndex = 8;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            // 
+            // lblCategory
+            // 
+            lblCategory.AutoSize = true;
+            lblCategory.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCategory.ForeColor = Color.FromArgb(96, 112, 128);
+            lblCategory.Location = new Point(518, 16);
+            lblCategory.Name = "lblCategory";
+            lblCategory.Size = new Size(61, 13);
+            lblCategory.TabIndex = 7;
+            lblCategory.Text = "Category:";
+            // 
+            // cmbCategory
+            // 
+            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory.FormattingEnabled = true;
+            cmbCategory.Location = new Point(598, 11);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(112, 23);
+            cmbCategory.TabIndex = 6;
+            // 
+            // lblType
+            // 
+            lblType.AutoSize = true;
+            lblType.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblType.ForeColor = Color.FromArgb(96, 112, 128);
+            lblType.Location = new Point(354, 16);
+            lblType.Name = "lblType";
+            lblType.Size = new Size(39, 13);
+            lblType.TabIndex = 5;
+            lblType.Text = "Type:";
+            // 
+            // cmbType
+            // 
+            cmbType.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbType.FormattingEnabled = true;
+            cmbType.Items.AddRange(new object[] { "All", "Income", "Expense" });
+            cmbType.Location = new Point(400, 12);
+            cmbType.Name = "cmbType";
+            cmbType.Size = new Size(112, 23);
+            cmbType.TabIndex = 4;
+            // 
+            // lblTo
+            // 
+            lblTo.AutoSize = true;
+            lblTo.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTo.ForeColor = Color.FromArgb(96, 112, 128);
+            lblTo.Location = new Point(194, 16);
+            lblTo.Name = "lblTo";
+            lblTo.Size = new Size(26, 13);
+            lblTo.TabIndex = 3;
+            lblTo.Text = "To:";
+            // 
+            // lblFrom
+            // 
+            lblFrom.AutoSize = true;
+            lblFrom.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFrom.ForeColor = Color.FromArgb(96, 112, 128);
+            lblFrom.Location = new Point(11, 16);
+            lblFrom.Name = "lblFrom";
+            lblFrom.Size = new Size(38, 13);
+            lblFrom.TabIndex = 2;
+            lblFrom.Text = "From:";
+            // 
+            // dtpTo
+            // 
+            dtpTo.Format = DateTimePickerFormat.Short;
+            dtpTo.Location = new Point(225, 12);
+            dtpTo.Name = "dtpTo";
+            dtpTo.Size = new Size(123, 23);
+            dtpTo.TabIndex = 1;
+            // 
+            // dtpFrom
+            // 
+            dtpFrom.Format = DateTimePickerFormat.Short;
+            dtpFrom.Location = new Point(56, 13);
+            dtpFrom.Name = "dtpFrom";
+            dtpFrom.Size = new Size(123, 23);
+            dtpFrom.TabIndex = 0;
             // 
             // pictureBox7
             // 
@@ -478,28 +479,28 @@
             // dgvTransactions
             // 
             dgvTransactions.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(5, 10, 50);
-            dgvTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(5, 10, 50);
+            dgvTransactions.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvTransactions.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvTransactions.BackgroundColor = Color.FromArgb(3, 7, 42);
             dgvTransactions.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(3, 7, 85);
-            dataGridViewCellStyle5.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(96, 112, 128);
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(3, 7, 85);
+            dataGridViewCellStyle2.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(96, 112, 128);
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvTransactions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(3, 7, 42);
-            dataGridViewCellStyle6.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(160, 184, 224);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(26, 48, 112);
-            dataGridViewCellStyle6.SelectionForeColor = Color.White;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvTransactions.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(3, 7, 42);
+            dataGridViewCellStyle3.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(160, 184, 224);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(26, 48, 112);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvTransactions.DefaultCellStyle = dataGridViewCellStyle3;
             dgvTransactions.GridColor = Color.FromArgb(20, 30, 80);
             dgvTransactions.Location = new Point(168, 159);
             dgvTransactions.Name = "dgvTransactions";
@@ -520,13 +521,13 @@
             label7.ForeColor = Color.White;
             label7.Location = new Point(179, 54);
             label7.Name = "label7";
-            label7.Size = new Size(329, 39);
+            label7.Size = new Size(269, 31);
             label7.TabIndex = 18;
             label7.Text = "Transaction History";
             // 
             // History
             // 
-            AutoScaleDimensions = new SizeF(9F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
             ClientSize = new Size(1199, 708);
@@ -539,7 +540,7 @@
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Name = "History";
             Text = "History";
-            this.Load += new EventHandler(this.History_Load);
+            Load += History_Load;
             panel1.ResumeLayout(false);
             historypanel.ResumeLayout(false);
             historypanel.PerformLayout();
