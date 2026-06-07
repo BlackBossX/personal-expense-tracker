@@ -17,6 +17,9 @@ namespace PocketLedger
         public landing()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -38,6 +41,7 @@ namespace PocketLedger
         {
             login loginpage = new login();
             loginpage.Show();
+            this.Hide();
 
         }
 
@@ -45,6 +49,7 @@ namespace PocketLedger
         {
             signup signuppage = new signup();
             signuppage.Show();
+            this.Hide();
 
         }
     }

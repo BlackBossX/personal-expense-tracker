@@ -513,6 +513,7 @@
             dgvTransactions.ShowRowErrors = false;
             dgvTransactions.Size = new Size(1032, 549);
             dgvTransactions.TabIndex = 17;
+            dgvTransactions.CellContentClick += dgvTransactions_CellContentClick;
             // 
             // label7
             // 

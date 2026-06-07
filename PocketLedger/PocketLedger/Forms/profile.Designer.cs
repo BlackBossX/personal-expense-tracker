@@ -36,7 +36,7 @@
             // 
             // profilepic
             // 
-            profilepic.Location = new Point(399, 49);
+            profilepic.Location = new Point(533, 51);
             profilepic.Name = "profilepic";
             profilepic.Size = new Size(100, 100);
             profilepic.TabIndex = 9;
@@ -69,7 +69,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
-            ClientSize = new Size(933, 531);
+            ClientSize = new Size(1199, 708);
             Controls.Add(emailbox);
             Controls.Add(greeting);
             Controls.Add(profilepic);

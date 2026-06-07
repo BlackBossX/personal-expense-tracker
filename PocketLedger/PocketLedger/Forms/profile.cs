@@ -15,6 +15,9 @@ namespace PocketLedger.Forms
         public profile(string mail)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             loggedEmail = mail;
         }
 

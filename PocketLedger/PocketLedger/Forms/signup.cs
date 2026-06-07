@@ -16,6 +16,9 @@ namespace PocketLedger
         public signup()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void signup_Load(object sender, EventArgs e)

@@ -16,6 +16,9 @@ namespace PocketLedger
         public login()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)

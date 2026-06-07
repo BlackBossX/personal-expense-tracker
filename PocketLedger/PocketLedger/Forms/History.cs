@@ -16,6 +16,9 @@ namespace PocketLedger.Forms
         public History(string email)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             loggedEmail = email;
         }
 
@@ -155,6 +158,11 @@ namespace PocketLedger.Forms
         }
 
         private void profilepic_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvTransactions_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -19,6 +19,9 @@ namespace PocketLedger.Forms
         public Dashboard(string loggedmail)
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
 
             loggedEmail = loggedmail;
         }
@@ -176,6 +179,24 @@ namespace PocketLedger.Forms
 
         private void greeting_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+            profile profilePanelLoad = new profile(loggedEmail);
+            profilePanelLoad.Show();
+        }
+
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+            AddTransection transection = new AddTransection();
+            transection.Show();
+        }
+
+        private void pictureBox6_Click_1(object sender, EventArgs e)
+        {
+            History historyPage = new History(loggedEmail);
+            historyPage.Show();
         }
     }
 }
