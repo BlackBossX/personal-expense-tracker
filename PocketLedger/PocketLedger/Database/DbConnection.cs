@@ -9,7 +9,7 @@ namespace PocketLedger.Database
 internal class DbConnection
     {
         private static string connStr =
-        "server=localhost;user=root;password=2419624196;database=pocketledgerdb;";
+        "server=localhost;user=root;password=;database=pocketledgerdb;";
 
         public static MySqlConnection GetConnection()
         {
