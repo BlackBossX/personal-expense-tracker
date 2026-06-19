@@ -198,5 +198,10 @@ namespace PocketLedger.Forms
             History historyPage = new History(loggedEmail);
             historyPage.Show();
         }
+
+        private void profilepic_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
