@@ -1,4 +1,4 @@
-﻿namespace PocketLedger
+﻿namespace PocketLedger.Forms
 {
     partial class BudgetPlanner
     {
@@ -322,6 +322,7 @@
             Name = "BudgetPlanner";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BudgetPlanner";
+            //Load += BudgetPlanner_Load_1;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBudget).EndInit();
             panel4.ResumeLayout(false);
