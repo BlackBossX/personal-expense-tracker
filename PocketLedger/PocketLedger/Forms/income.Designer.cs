@@ -1,6 +1,6 @@
 namespace PocketLedger.Forms
 {
-    partial class expenses
+    partial class income
     {
         private System.ComponentModel.IContainer components = null;
 
@@ -35,8 +35,8 @@ namespace PocketLedger.Forms
             btnFilter = new Button();
             btnClear = new Button();
             pnlGrid = new Panel();
-            dgvExpenses = new DataGridView();
-            btnAddExpense = new Button();
+            dgvIncome = new DataGridView();
+            btnAddIncome = new Button();
             btnDelete = new Button();
             lblCardTotalHdr = new Label();
             lblCardTotal = new Label();
@@ -47,7 +47,7 @@ namespace PocketLedger.Forms
             pnlMain.SuspendLayout();
             pnlFilter.SuspendLayout();
             pnlGrid.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvExpenses).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvIncome).BeginInit();
             SuspendLayout();
             // 
             // pnlMain
@@ -60,7 +60,7 @@ namespace PocketLedger.Forms
             pnlMain.Controls.Add(pnlCardAverage);
             pnlMain.Controls.Add(pnlFilter);
             pnlMain.Controls.Add(pnlGrid);
-            pnlMain.Controls.Add(btnAddExpense);
+            pnlMain.Controls.Add(btnAddIncome);
             pnlMain.Controls.Add(btnDelete);
             pnlMain.Dock = DockStyle.Fill;
             pnlMain.Location = new Point(0, 0);
@@ -76,7 +76,7 @@ namespace PocketLedger.Forms
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(500, 50);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "💸  Expenses";
+            lblTitle.Text = "💰  Income";
             // 
             // lblSubTitle
             // 
@@ -86,7 +86,7 @@ namespace PocketLedger.Forms
             lblSubTitle.Name = "lblSubTitle";
             lblSubTitle.Size = new Size(500, 22);
             lblSubTitle.TabIndex = 1;
-            lblSubTitle.Text = "Track and manage all your expense transactions";
+            lblSubTitle.Text = "Monitor all your income sources in one place";
             // 
             // pnlCardTotal
             // 
@@ -121,7 +121,7 @@ namespace PocketLedger.Forms
             pnlFilter.Controls.Add(txtSearch);
             pnlFilter.Controls.Add(btnFilter);
             pnlFilter.Controls.Add(btnClear);
-            pnlFilter.Location = new Point(95, 165);
+            pnlFilter.Location = new Point(84, 160);
             pnlFilter.Name = "pnlFilter";
             pnlFilter.Size = new Size(990, 64);
             pnlFilter.TabIndex = 5;
@@ -201,7 +201,7 @@ namespace PocketLedger.Forms
             // 
             // btnFilter
             // 
-            btnFilter.BackColor = Color.FromArgb(0, 119, 230);
+            btnFilter.BackColor = Color.FromArgb(50, 200, 120);
             btnFilter.Cursor = Cursors.Hand;
             btnFilter.FlatAppearance.BorderSize = 0;
             btnFilter.FlatStyle = FlatStyle.Flat;
@@ -232,22 +232,22 @@ namespace PocketLedger.Forms
             // pnlGrid
             // 
             pnlGrid.BackColor = Color.FromArgb(16, 24, 64);
-            pnlGrid.Controls.Add(dgvExpenses);
-            pnlGrid.Location = new Point(95, 255);
+            pnlGrid.Controls.Add(dgvIncome);
+            pnlGrid.Location = new Point(84, 246);
             pnlGrid.Name = "pnlGrid";
             pnlGrid.Size = new Size(990, 360);
             pnlGrid.TabIndex = 6;
             // 
-            // dgvExpenses
+            // dgvIncome
             // 
-            dgvExpenses.AllowUserToAddRows = false;
-            dgvExpenses.AllowUserToDeleteRows = false;
+            dgvIncome.AllowUserToAddRows = false;
+            dgvIncome.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(20, 30, 75);
             dataGridViewCellStyle1.ForeColor = Color.White;
-            dgvExpenses.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dgvExpenses.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvExpenses.BackgroundColor = Color.FromArgb(16, 24, 64);
-            dgvExpenses.BorderStyle = BorderStyle.None;
+            dgvIncome.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvIncome.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvIncome.BackgroundColor = Color.FromArgb(16, 24, 64);
+            dgvIncome.BorderStyle = BorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = Color.FromArgb(25, 35, 80);
             dataGridViewCellStyle2.Font = new Font("Poppins", 9F, FontStyle.Bold);
@@ -255,8 +255,8 @@ namespace PocketLedger.Forms
             dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(25, 35, 80);
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dgvExpenses.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dgvExpenses.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvIncome.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvIncome.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(16, 24, 64);
             dataGridViewCellStyle3.Font = new Font("Poppins", 9F);
@@ -264,46 +264,45 @@ namespace PocketLedger.Forms
             dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(50, 80, 160);
             dataGridViewCellStyle3.SelectionForeColor = Color.White;
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dgvExpenses.DefaultCellStyle = dataGridViewCellStyle3;
-            dgvExpenses.Dock = DockStyle.Fill;
-            dgvExpenses.EnableHeadersVisualStyles = false;
-            dgvExpenses.Font = new Font("Poppins", 9F);
-            dgvExpenses.GridColor = Color.FromArgb(40, 55, 100);
-            dgvExpenses.Location = new Point(0, 0);
-            dgvExpenses.MultiSelect = false;
-            dgvExpenses.Name = "dgvExpenses";
-            dgvExpenses.ReadOnly = true;
-            dgvExpenses.RowHeadersVisible = false;
-            dgvExpenses.RowTemplate.Height = 32;
-            dgvExpenses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvExpenses.Size = new Size(990, 360);
-            dgvExpenses.TabIndex = 0;
+            dgvIncome.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvIncome.EnableHeadersVisualStyles = false;
+            dgvIncome.Font = new Font("Poppins", 9F);
+            dgvIncome.GridColor = Color.FromArgb(40, 55, 100);
+            dgvIncome.Location = new Point(0, 0);
+            dgvIncome.MultiSelect = false;
+            dgvIncome.Name = "dgvIncome";
+            dgvIncome.ReadOnly = true;
+            dgvIncome.RowHeadersVisible = false;
+            dgvIncome.RowTemplate.Height = 32;
+            dgvIncome.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvIncome.Size = new Size(990, 360);
+            dgvIncome.TabIndex = 0;
             // 
-            // btnAddExpense
+            // btnAddIncome
             // 
-            btnAddExpense.BackColor = Color.FromArgb(200, 60, 60);
-            btnAddExpense.Cursor = Cursors.Hand;
-            btnAddExpense.FlatAppearance.BorderSize = 0;
-            btnAddExpense.FlatStyle = FlatStyle.Flat;
-            btnAddExpense.Font = new Font("Poppins", 10F, FontStyle.Bold);
-            btnAddExpense.ForeColor = Color.White;
-            btnAddExpense.Location = new Point(95, 638);
-            btnAddExpense.Name = "btnAddExpense";
-            btnAddExpense.Size = new Size(160, 38);
-            btnAddExpense.TabIndex = 7;
-            btnAddExpense.Text = "+ Add Expense";
-            btnAddExpense.UseVisualStyleBackColor = false;
-            btnAddExpense.Click += btnAddExpense_Click;
+            btnAddIncome.BackColor = Color.FromArgb(50, 200, 120);
+            btnAddIncome.Cursor = Cursors.Hand;
+            btnAddIncome.FlatAppearance.BorderSize = 0;
+            btnAddIncome.FlatStyle = FlatStyle.Flat;
+            btnAddIncome.Font = new Font("Poppins", 10F, FontStyle.Bold);
+            btnAddIncome.ForeColor = Color.White;
+            btnAddIncome.Location = new Point(84, 633);
+            btnAddIncome.Name = "btnAddIncome";
+            btnAddIncome.Size = new Size(160, 38);
+            btnAddIncome.TabIndex = 7;
+            btnAddIncome.Text = "+ Add Income";
+            btnAddIncome.UseVisualStyleBackColor = false;
+            btnAddIncome.Click += btnAddIncome_Click;
             // 
             // btnDelete
             // 
-            btnDelete.BackColor = Color.FromArgb(80, 30, 30);
+            btnDelete.BackColor = Color.FromArgb(40, 70, 40);
             btnDelete.Cursor = Cursors.Hand;
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Poppins", 10F, FontStyle.Bold);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(267, 638);
+            btnDelete.Location = new Point(256, 633);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(175, 38);
             btnDelete.TabIndex = 8;
@@ -353,26 +352,25 @@ namespace PocketLedger.Forms
             lblCardAvg.Size = new Size(100, 23);
             lblCardAvg.TabIndex = 0;
             // 
-            // expenses
+            // income
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
             ClientSize = new Size(1199, 708);
             Controls.Add(pnlMain);
-            Name = "expenses";
+            Name = "income";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Expenses — PocketLedger";
-            Load += expenses_Load;
+            Text = "Income — PocketLedger";
+            Load += income_Load;
             pnlMain.ResumeLayout(false);
             pnlFilter.ResumeLayout(false);
             pnlFilter.PerformLayout();
             pnlGrid.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvExpenses).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvIncome).EndInit();
             ResumeLayout(false);
         }
 
-        // Helper: build a summary card
         private void SetupCard(System.Windows.Forms.Panel panel,
                                 System.Windows.Forms.Label hdr,
                                 System.Windows.Forms.Label val,
@@ -425,8 +423,8 @@ namespace PocketLedger.Forms
         private System.Windows.Forms.Button       btnFilter;
         private System.Windows.Forms.Button       btnClear;
         private System.Windows.Forms.Panel        pnlGrid;
-        private System.Windows.Forms.DataGridView dgvExpenses;
-        private System.Windows.Forms.Button       btnAddExpense;
+        private System.Windows.Forms.DataGridView dgvIncome;
+        private System.Windows.Forms.Button       btnAddIncome;
         private System.Windows.Forms.Button       btnDelete;
     }
 }

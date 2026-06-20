@@ -1,371 +1,395 @@
-﻿namespace PocketLedger.Forms
+namespace PocketLedger.Forms
 {
     partial class BudgetPlanner
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
-            {
                 components.Dispose();
-            }
             base.Dispose(disposing);
         }
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            dgvBudget = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            panel4 = new Panel();
-            lblStatus = new Label();
-            pictureBox1 = new PictureBox();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             lblTitle = new Label();
+            lblSubTitle = new Label();
+            grpBudget = new GroupBox();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
             cmbMonth = new ComboBox();
+            label2 = new Label();
             cmbCategory = new ComboBox();
+            label3 = new Label();
             txtBudget = new TextBox();
             btnAdd = new Button();
-            grpBudget = new GroupBox();
-            groupBox1 = new GroupBox();
-            panelRemaining = new Panel();
-            lblRemaining = new Label();
-            panelSpent = new Panel();
-            lblTotalSpent = new Label();
-            panelBudget = new Panel();
+            btnDelete = new Button();
+            panel2 = new Panel();
+            dgvBudget = new DataGridView();
             lblTotalBudget = new Label();
+            lblTotalBudgetVal = new Label();
+            lblTotalSpent = new Label();
+            lblTotalSpentVal = new Label();
+            lblRemaining = new Label();
+            lblRemainingVal = new Label();
+            panel4 = new Panel();
+            lblStatusLabel = new Label();
+            lblStatus = new Label();
+            grpBudget.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvBudget).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            grpBudget.SuspendLayout();
-            groupBox1.SuspendLayout();
-            panelRemaining.SuspendLayout();
-            panelSpent.SuspendLayout();
-            panelBudget.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(16, 24, 64);
-            panel2.Controls.Add(dgvBudget);
-            panel2.Location = new Point(5, 201);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(756, 340);
-            panel2.TabIndex = 1;
-            // 
-            // dgvBudget
-            // 
-            dgvBudget.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvBudget.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvBudget.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvBudget.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4 });
-            dgvBudget.GridColor = Color.FromArgb(3, 7, 42);
-            dgvBudget.Location = new Point(0, 3);
-            dgvBudget.Name = "dgvBudget";
-            dgvBudget.RowHeadersWidth = 51;
-            dgvBudget.Size = new Size(756, 337);
-            dgvBudget.TabIndex = 0;
-            dgvBudget.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.HeaderText = "Category";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Budget Amount";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Spent Amount";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Remaining Amount";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
-            // panel4
-            // 
-            panel4.BackColor = Color.FromArgb(60, 15, 30);
-            panel4.Controls.Add(lblStatus);
-            panel4.Location = new Point(5, 560);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(972, 139);
-            panel4.TabIndex = 3;
-            // 
-            // lblStatus
-            // 
-            lblStatus.AutoSize = true;
-            lblStatus.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStatus.ForeColor = Color.White;
-            lblStatus.Location = new Point(7, 11);
-            lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(86, 31);
-            lblStatus.TabIndex = 0;
-            lblStatus.Text = "Status:";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.white_logo;
-            pictureBox1.Location = new Point(31, 13);
-            pictureBox1.Margin = new Padding(5, 4, 5, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(160, 48);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Font = new Font("Poppins", 22F, FontStyle.Bold);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(199, 24);
+            lblTitle.Location = new Point(16, 10);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(172, 28);
-            lblTitle.TabIndex = 5;
-            lblTitle.Text = "- Budget Planner";
+            lblTitle.Size = new Size(315, 53);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "📊  Budget Planner";
+            // 
+            // lblSubTitle
+            // 
+            lblSubTitle.AutoSize = true;
+            lblSubTitle.Font = new Font("Poppins", 9.5F);
+            lblSubTitle.ForeColor = Color.FromArgb(160, 180, 220);
+            lblSubTitle.Location = new Point(28, 58);
+            lblSubTitle.Name = "lblSubTitle";
+            lblSubTitle.Size = new Size(364, 23);
+            lblSubTitle.TabIndex = 1;
+            lblSubTitle.Text = "Set monthly budgets and track spending against them";
+            // 
+            // grpBudget
+            // 
+            grpBudget.BackColor = Color.FromArgb(3, 7, 42);
+            grpBudget.Controls.Add(label1);
+            grpBudget.Controls.Add(cmbMonth);
+            grpBudget.Controls.Add(label2);
+            grpBudget.Controls.Add(cmbCategory);
+            grpBudget.Controls.Add(label3);
+            grpBudget.Controls.Add(txtBudget);
+            grpBudget.Controls.Add(btnAdd);
+            grpBudget.Controls.Add(btnDelete);
+            grpBudget.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            grpBudget.ForeColor = Color.FromArgb(150, 170, 220);
+            grpBudget.Location = new Point(187, 112);
+            grpBudget.Name = "grpBudget";
+            grpBudget.Size = new Size(829, 110);
+            grpBudget.TabIndex = 2;
+            grpBudget.TabStop = false;
+            grpBudget.Text = "Add / Update Budget";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(65, 23);
+            label1.Location = new Point(14, 24);
             label1.Name = "label1";
-            label1.Size = new Size(75, 28);
+            label1.Size = new Size(50, 22);
             label1.TabIndex = 0;
             label1.Text = "Month";
+            // 
+            // cmbMonth
+            // 
+            cmbMonth.BackColor = Color.FromArgb(25, 35, 85);
+            cmbMonth.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbMonth.FlatStyle = FlatStyle.Flat;
+            cmbMonth.Font = new Font("Poppins", 9F);
+            cmbMonth.ForeColor = Color.White;
+            cmbMonth.Location = new Point(14, 48);
+            cmbMonth.Name = "cmbMonth";
+            cmbMonth.Size = new Size(145, 30);
+            cmbMonth.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(260, 23);
+            label2.Location = new Point(175, 24);
             label2.Name = "label2";
-            label2.Size = new Size(98, 28);
-            label2.TabIndex = 1;
+            label2.Size = new Size(68, 22);
+            label2.TabIndex = 2;
             label2.Text = "Category";
+            // 
+            // cmbCategory
+            // 
+            cmbCategory.BackColor = Color.FromArgb(25, 35, 85);
+            cmbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCategory.FlatStyle = FlatStyle.Flat;
+            cmbCategory.Font = new Font("Poppins", 9F);
+            cmbCategory.ForeColor = Color.White;
+            cmbCategory.Location = new Point(175, 48);
+            cmbCategory.Name = "cmbCategory";
+            cmbCategory.Size = new Size(200, 30);
+            cmbCategory.TabIndex = 3;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Poppins", 9F, FontStyle.Bold);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(456, 23);
+            label3.Location = new Point(392, 24);
             label3.Name = "label3";
-            label3.Size = new Size(80, 28);
-            label3.TabIndex = 2;
-            label3.Text = "Budget";
-            // 
-            // cmbMonth
-            // 
-            cmbMonth.FormattingEnabled = true;
-            cmbMonth.Location = new Point(65, 69);
-            cmbMonth.Name = "cmbMonth";
-            cmbMonth.Size = new Size(141, 28);
-            cmbMonth.TabIndex = 3;
-            // 
-            // cmbCategory
-            // 
-            cmbCategory.FormattingEnabled = true;
-            cmbCategory.Location = new Point(260, 69);
-            cmbCategory.Name = "cmbCategory";
-            cmbCategory.Size = new Size(141, 28);
-            cmbCategory.TabIndex = 4;
+            label3.Size = new Size(141, 22);
+            label3.TabIndex = 4;
+            label3.Text = "Budget Amount (Rs.)";
             // 
             // txtBudget
             // 
-            txtBudget.Location = new Point(456, 69);
+            txtBudget.BackColor = Color.FromArgb(25, 35, 85);
+            txtBudget.BorderStyle = BorderStyle.FixedSingle;
+            txtBudget.Font = new Font("Poppins", 9F);
+            txtBudget.ForeColor = Color.White;
+            txtBudget.Location = new Point(392, 48);
             txtBudget.Name = "txtBudget";
-            txtBudget.Size = new Size(114, 27);
+            txtBudget.PlaceholderText = "e.g. 20000.00";
+            txtBudget.Size = new Size(160, 25);
             txtBudget.TabIndex = 5;
             // 
             // btnAdd
             // 
             btnAdd.BackColor = Color.FromArgb(0, 119, 230);
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdd.Font = new Font("Poppins", 9F, FontStyle.Bold);
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(616, 37);
+            btnAdd.Location = new Point(568, 46);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(93, 43);
+            btnAdd.Size = new Size(120, 34);
             btnAdd.TabIndex = 6;
-            btnAdd.Text = "button1";
+            btnAdd.Text = "Add Budget";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
-            // grpBudget
+            // btnDelete
             // 
-            grpBudget.AutoSize = true;
-            grpBudget.Controls.Add(label1);
-            grpBudget.Controls.Add(cmbMonth);
-            grpBudget.Controls.Add(cmbCategory);
-            grpBudget.Controls.Add(label3);
-            grpBudget.Controls.Add(label2);
-            grpBudget.Controls.Add(btnAdd);
-            grpBudget.Controls.Add(txtBudget);
-            grpBudget.ForeColor = Color.White;
-            grpBudget.Location = new Point(19, 68);
-            grpBudget.Name = "grpBudget";
-            grpBudget.Size = new Size(734, 123);
-            grpBudget.TabIndex = 6;
-            grpBudget.TabStop = false;
-            grpBudget.Text = "Add Budget";
+            btnDelete.BackColor = Color.FromArgb(160, 40, 40);
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(700, 46);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(110, 34);
+            btnDelete.TabIndex = 7;
+            btnDelete.Text = "🗑 Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // groupBox1
+            // panel2
             // 
-            groupBox1.Controls.Add(panelRemaining);
-            groupBox1.Controls.Add(panelSpent);
-            groupBox1.Controls.Add(panelBudget);
-            groupBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            groupBox1.ForeColor = Color.White;
-            groupBox1.Location = new Point(768, 13);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(227, 528);
-            groupBox1.TabIndex = 7;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Summary ";
+            panel2.BackColor = Color.FromArgb(16, 24, 64);
+            panel2.Controls.Add(dgvBudget);
+            panel2.Location = new Point(187, 239);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(829, 390);
+            panel2.TabIndex = 3;
             // 
-            // panelRemaining
+            // dgvBudget
             // 
-            panelRemaining.Controls.Add(lblRemaining);
-            panelRemaining.Location = new Point(12, 367);
-            panelRemaining.Name = "panelRemaining";
-            panelRemaining.Size = new Size(202, 133);
-            panelRemaining.TabIndex = 2;
-            panelRemaining.Paint += panelRemaining_Paint;
-            // 
-            // lblRemaining
-            // 
-            lblRemaining.AutoSize = true;
-            lblRemaining.Location = new Point(5, 10);
-            lblRemaining.Name = "lblRemaining";
-            lblRemaining.Size = new Size(96, 23);
-            lblRemaining.TabIndex = 1;
-            lblRemaining.Text = "Remaining";
-            // 
-            // panelSpent
-            // 
-            panelSpent.Controls.Add(lblTotalSpent);
-            panelSpent.Location = new Point(12, 206);
-            panelSpent.Name = "panelSpent";
-            panelSpent.Size = new Size(202, 139);
-            panelSpent.TabIndex = 1;
-            // 
-            // lblTotalSpent
-            // 
-            lblTotalSpent.AutoSize = true;
-            lblTotalSpent.Location = new Point(5, 10);
-            lblTotalSpent.Name = "lblTotalSpent";
-            lblTotalSpent.Size = new Size(101, 23);
-            lblTotalSpent.TabIndex = 1;
-            lblTotalSpent.Text = "Total Spent";
-            // 
-            // panelBudget
-            // 
-            panelBudget.Controls.Add(lblTotalBudget);
-            panelBudget.Location = new Point(7, 55);
-            panelBudget.Name = "panelBudget";
-            panelBudget.Size = new Size(202, 135);
-            panelBudget.TabIndex = 0;
+            dgvBudget.AllowUserToAddRows = false;
+            dgvBudget.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(20, 30, 75);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dgvBudget.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvBudget.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvBudget.BackgroundColor = Color.FromArgb(16, 24, 64);
+            dgvBudget.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(25, 35, 80);
+            dataGridViewCellStyle2.Font = new Font("Poppins", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(150, 180, 255);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(25, 35, 80);
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvBudget.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvBudget.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(16, 24, 64);
+            dataGridViewCellStyle3.Font = new Font("Poppins", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(50, 80, 160);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dgvBudget.DefaultCellStyle = dataGridViewCellStyle3;
+            dgvBudget.Dock = DockStyle.Fill;
+            dgvBudget.EnableHeadersVisualStyles = false;
+            dgvBudget.Font = new Font("Poppins", 9F);
+            dgvBudget.GridColor = Color.FromArgb(40, 55, 100);
+            dgvBudget.Location = new Point(0, 0);
+            dgvBudget.MultiSelect = false;
+            dgvBudget.Name = "dgvBudget";
+            dgvBudget.ReadOnly = true;
+            dgvBudget.RowHeadersVisible = false;
+            dgvBudget.RowTemplate.Height = 34;
+            dgvBudget.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvBudget.Size = new Size(829, 390);
+            dgvBudget.TabIndex = 0;
+            dgvBudget.CellContentClick += dataGridView1_CellContentClick;
             // 
             // lblTotalBudget
             // 
-            lblTotalBudget.AutoSize = true;
-            lblTotalBudget.Location = new Point(5, 0);
+            lblTotalBudget.Location = new Point(0, 0);
             lblTotalBudget.Name = "lblTotalBudget";
-            lblTotalBudget.Size = new Size(118, 23);
+            lblTotalBudget.Size = new Size(100, 23);
             lblTotalBudget.TabIndex = 0;
-            lblTotalBudget.Text = "Total Budget ";
+            // 
+            // lblTotalBudgetVal
+            // 
+            lblTotalBudgetVal.Location = new Point(0, 0);
+            lblTotalBudgetVal.Name = "lblTotalBudgetVal";
+            lblTotalBudgetVal.Size = new Size(100, 23);
+            lblTotalBudgetVal.TabIndex = 0;
+            // 
+            // lblTotalSpent
+            // 
+            lblTotalSpent.Location = new Point(0, 0);
+            lblTotalSpent.Name = "lblTotalSpent";
+            lblTotalSpent.Size = new Size(100, 23);
+            lblTotalSpent.TabIndex = 0;
+            // 
+            // lblTotalSpentVal
+            // 
+            lblTotalSpentVal.Location = new Point(0, 0);
+            lblTotalSpentVal.Name = "lblTotalSpentVal";
+            lblTotalSpentVal.Size = new Size(100, 23);
+            lblTotalSpentVal.TabIndex = 0;
+            // 
+            // lblRemaining
+            // 
+            lblRemaining.Location = new Point(0, 0);
+            lblRemaining.Name = "lblRemaining";
+            lblRemaining.Size = new Size(100, 23);
+            lblRemaining.TabIndex = 0;
+            // 
+            // lblRemainingVal
+            // 
+            lblRemainingVal.Location = new Point(0, 0);
+            lblRemainingVal.Name = "lblRemainingVal";
+            lblRemainingVal.Size = new Size(100, 23);
+            lblRemainingVal.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = Color.FromArgb(20, 60, 20);
+            panel4.Controls.Add(lblStatusLabel);
+            panel4.Controls.Add(lblStatus);
+            panel4.Location = new Point(187, 636);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(829, 60);
+            panel4.TabIndex = 5;
+            // 
+            // lblStatusLabel
+            // 
+            lblStatusLabel.AutoSize = true;
+            lblStatusLabel.Font = new Font("Poppins", 11F, FontStyle.Bold);
+            lblStatusLabel.ForeColor = Color.FromArgb(180, 200, 255);
+            lblStatusLabel.Location = new Point(12, 16);
+            lblStatusLabel.Name = "lblStatusLabel";
+            lblStatusLabel.Size = new Size(122, 26);
+            lblStatusLabel.TabIndex = 0;
+            lblStatusLabel.Text = "Overall Status:";
+            // 
+            // lblStatus
+            // 
+            lblStatus.AutoSize = true;
+            lblStatus.Font = new Font("Poppins", 12F, FontStyle.Bold);
+            lblStatus.ForeColor = Color.FromArgb(50, 220, 120);
+            lblStatus.Location = new Point(160, 14);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(76, 28);
+            lblStatus.TabIndex = 1;
+            lblStatus.Text = "✅ Safe";
             // 
             // BudgetPlanner
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(3, 7, 42);
-            ClientSize = new Size(1000, 699);
-            Controls.Add(groupBox1);
-            Controls.Add(panel4);
-            Controls.Add(panel2);
-            Controls.Add(grpBudget);
+            ClientSize = new Size(1199, 708);
             Controls.Add(lblTitle);
-            Controls.Add(pictureBox1);
+            Controls.Add(lblSubTitle);
+            Controls.Add(grpBudget);
+            Controls.Add(panel2);
+            Controls.Add(panel4);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
             Name = "BudgetPlanner";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "BudgetPlanner";
-            //Load += BudgetPlanner_Load_1;
+            Text = "Budget Planner — PocketLedger";
+            Load += BudgetPlanner_Load;
+            grpBudget.ResumeLayout(false);
+            grpBudget.PerformLayout();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvBudget).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            grpBudget.ResumeLayout(false);
-            grpBudget.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            panelRemaining.ResumeLayout(false);
-            panelRemaining.PerformLayout();
-            panelSpent.ResumeLayout(false);
-            panelSpent.PerformLayout();
-            panelBudget.ResumeLayout(false);
-            panelBudget.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
+        // Helper: summary card
+        private void SetupSummaryCard(System.Windows.Forms.Panel panel,
+                                      System.Windows.Forms.Label hdr,
+                                      System.Windows.Forms.Label val,
+                                      string hdrText, string valText,
+                                      System.Drawing.Color accent,
+                                      System.Drawing.Point location)
+        {
+            panel.BackColor   = System.Drawing.Color.FromArgb(16, 24, 64);
+            panel.Location    = location;
+            panel.Size        = new System.Drawing.Size(312, 120);
+            panel.Controls.AddRange(new System.Windows.Forms.Control[] { hdr, val });
+
+            hdr.Text      = hdrText;
+            hdr.Font      = new System.Drawing.Font("Poppins", 9F, System.Drawing.FontStyle.Bold);
+            hdr.ForeColor = accent;
+            hdr.Location  = new System.Drawing.Point(10, 12);
+            hdr.AutoSize  = true;
+
+            val.Text      = valText;
+            val.Font      = new System.Drawing.Font("Poppins", 16F, System.Drawing.FontStyle.Bold);
+            val.ForeColor = System.Drawing.Color.White;
+            val.Location  = new System.Drawing.Point(10, 38);
+            val.AutoSize  = true;
+        }
+
         #endregion
-        private Panel panel2;
-        private Panel panel4;
-        private DataGridView dgvBudget;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private PictureBox pictureBox1;
-        private Label lblTitle;
-        private Label label1;
-        private Label label2;
-        private Label label3;
-        private ComboBox cmbMonth;
-        private ComboBox cmbCategory;
-        private TextBox txtBudget;
-        private Button btnAdd;
-        private GroupBox grpBudget;
-        private Label lblStatus;
-        private GroupBox groupBox1;
-        private Panel panelRemaining;
-        private Panel panelSpent;
-        private Panel panelBudget;
-        private Label lblTotalSpent;
-        private Label lblTotalBudget;
-        private Label lblRemaining;
+
+        private System.Windows.Forms.Label       lblTitle;
+        private System.Windows.Forms.Label       lblSubTitle;
+        private System.Windows.Forms.GroupBox    grpBudget;
+        private System.Windows.Forms.Label       label1;
+        private System.Windows.Forms.Label       label2;
+        private System.Windows.Forms.Label       label3;
+        private System.Windows.Forms.ComboBox    cmbMonth;
+        private System.Windows.Forms.ComboBox    cmbCategory;
+        private System.Windows.Forms.TextBox     txtBudget;
+        private System.Windows.Forms.Button      btnAdd;
+        private System.Windows.Forms.Button      btnDelete;
+        private System.Windows.Forms.Panel       panel2;
+        private System.Windows.Forms.DataGridView dgvBudget;
+        private System.Windows.Forms.Label       lblTotalBudget;
+        private System.Windows.Forms.Label       lblTotalBudgetVal;
+        private System.Windows.Forms.Label       lblTotalSpent;
+        private System.Windows.Forms.Label       lblTotalSpentVal;
+        private System.Windows.Forms.Label       lblRemaining;
+        private System.Windows.Forms.Label       lblRemainingVal;
+        private System.Windows.Forms.Panel       panel4;
+        private System.Windows.Forms.Label       lblStatusLabel;
+        private System.Windows.Forms.Label       lblStatus;
     }
 }

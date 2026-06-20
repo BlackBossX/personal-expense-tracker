@@ -6,14 +6,14 @@ using System.Windows.Forms;
 
 namespace PocketLedger.Forms
 {
-    public partial class expenses : Form
+    public partial class income : Form
     {
-        private readonly IncomeExpenseRepository _repo = new IncomeExpenseRepository();
+        private readonly IncomeExpenseRepository _repo   = new IncomeExpenseRepository();
         private readonly TransactionRepository   _txRepo = new TransactionRepository();
         private string loggedEmail;
         private Action _onUpdate;
 
-        public expenses(string email, Action onUpdate = null)
+        public income(string email, Action onUpdate = null)
         {
             InitializeComponent();
             loggedEmail = email;
@@ -22,18 +22,15 @@ namespace PocketLedger.Forms
             this.MaximizeBox     = false;
         }
 
-        private void expenses_Load(object sender, EventArgs e)
+        private void income_Load(object sender, EventArgs e)
         {
             try
             {
-                
-                _txRepo.GetCategories(cmbCategory, "Expense");
+                _txRepo.GetCategories(cmbCategory, "Income");
 
-                
                 dtpFrom.Value = DateTime.Now.AddMonths(-1);
                 dtpTo.Value   = DateTime.Now;
 
-                
                 txtSearch.Text      = "Search...";
                 txtSearch.ForeColor = Color.Gray;
                 txtSearch.GotFocus  += TxtSearch_GotFocus;
@@ -43,7 +40,7 @@ namespace PocketLedger.Forms
                 btnFilter.Click += BtnFilter_Click;
                 btnClear.Click  += BtnClear_Click;
 
-                LoadExpenses();
+                LoadIncome();
                 LoadSummary();
             }
             catch (Exception ex)
@@ -56,46 +53,43 @@ namespace PocketLedger.Forms
         
         
         
-        private void LoadExpenses(string category = "All",
-                                  DateTime? from = null, DateTime? to = null,
-                                  string search = "")
+        private void LoadIncome(string category = "All",
+                                DateTime? from = null, DateTime? to = null,
+                                string search = "")
         {
             try
             {
-                var dt = _repo.GetByType(loggedEmail, "Expense",
+                var dt = _repo.GetByType(loggedEmail, "Income",
                     category: category, from: from, to: to, search: search);
 
-                dgvExpenses.DataSource = dt;
+                dgvIncome.DataSource = dt;
 
-                if (dgvExpenses.Columns.Contains("ID"))
-                    dgvExpenses.Columns["ID"].Visible = false;
-
-                if (dgvExpenses.Columns.Contains("Category"))
-                    dgvExpenses.Columns["Category"].HeaderText = "Category";
-                if (dgvExpenses.Columns.Contains("Amount"))
+                if (dgvIncome.Columns.Contains("ID"))
+                    dgvIncome.Columns["ID"].Visible = false;
+                if (dgvIncome.Columns.Contains("Amount"))
                 {
-                    dgvExpenses.Columns["Amount"].HeaderText    = "Amount (Rs.)";
-                    dgvExpenses.Columns["Amount"].DefaultCellStyle.Format = "N2";
+                    dgvIncome.Columns["Amount"].HeaderText = "Amount (Rs.)";
+                    dgvIncome.Columns["Amount"].DefaultCellStyle.Format = "N2";
                 }
-                if (dgvExpenses.Columns.Contains("PaymentMethod"))
-                    dgvExpenses.Columns["PaymentMethod"].HeaderText = "Payment Method";
-                if (dgvExpenses.Columns.Contains("Notes"))
-                    dgvExpenses.Columns["Notes"].HeaderText = "Notes";
-                if (dgvExpenses.Columns.Contains("Date"))
+                if (dgvIncome.Columns.Contains("PaymentMethod"))
+                    dgvIncome.Columns["PaymentMethod"].HeaderText = "Payment Method";
+                if (dgvIncome.Columns.Contains("Notes"))
+                    dgvIncome.Columns["Notes"].HeaderText = "Notes";
+                if (dgvIncome.Columns.Contains("Date"))
                 {
-                    dgvExpenses.Columns["Date"].HeaderText = "Date";
-                    dgvExpenses.Columns["Date"].DefaultCellStyle.Format = "dd MMM yyyy";
+                    dgvIncome.Columns["Date"].HeaderText = "Date";
+                    dgvIncome.Columns["Date"].DefaultCellStyle.Format = "dd MMM yyyy";
                 }
 
                 
-                foreach (DataGridViewRow row in dgvExpenses.Rows)
-                    row.DefaultCellStyle.ForeColor = Color.FromArgb(255, 100, 100);
+                foreach (DataGridViewRow row in dgvIncome.Rows)
+                    row.DefaultCellStyle.ForeColor = Color.FromArgb(50, 220, 130);
 
                 LoadSummary();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Failed to load expenses: " + ex.Message);
+                MessageBox.Show("Failed to load income: " + ex.Message);
             }
         }
 
@@ -107,10 +101,10 @@ namespace PocketLedger.Forms
             try
             {
                 string currentMonth = DateTime.Now.ToString("MMMM");
-                decimal total = _repo.GetTotal(loggedEmail, "Expense", currentMonth);
+                decimal total = _repo.GetTotal(loggedEmail, "Income", currentMonth);
                 lblCardTotal.Text = "Rs. " + total.ToString("N2");
 
-                var dt = _repo.GetByType(loggedEmail, "Expense",
+                var dt = _repo.GetByType(loggedEmail, "Income",
                     from: new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1),
                     to: DateTime.Now);
 
@@ -142,7 +136,7 @@ namespace PocketLedger.Forms
         {
             string cat    = cmbCategory.SelectedItem?.ToString() ?? "All";
             string search = txtSearch.Text == "Search..." ? "" : txtSearch.Text;
-            LoadExpenses(cat, dtpFrom.Value.Date, dtpTo.Value.Date, search);
+            LoadIncome(cat, dtpFrom.Value.Date, dtpTo.Value.Date, search);
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -152,20 +146,17 @@ namespace PocketLedger.Forms
             dtpTo.Value   = DateTime.Now;
             txtSearch.Text      = "Search...";
             txtSearch.ForeColor = Color.Gray;
-            LoadExpenses();
+            LoadIncome();
         }
 
         
         
         
-        private void btnAddExpense_Click(object sender, EventArgs e)
+        private void btnAddIncome_Click(object sender, EventArgs e)
         {
-            ShowAddDialog("Expense");
+            ShowAddDialog("Income");
         }
 
-        
-        
-        
         private void ShowAddDialog(string type)
         {
             var dlg = new Form
@@ -178,11 +169,9 @@ namespace PocketLedger.Forms
                 MaximizeBox     = false
             };
 
-            
             var lblAmt = MakeLabel("Amount (Rs.)", 20, 20);
-            var txtAmt = MakeTextBox(20, 48, "e.g. 1500.00");
+            var txtAmt = MakeTextBox(20, 48, "e.g. 50000.00");
 
-            
             var lblCat = MakeLabel("Category", 280, 20);
             var cmbCat = new ComboBox
             {
@@ -194,15 +183,12 @@ namespace PocketLedger.Forms
                 ForeColor     = System.Drawing.Color.White,
                 FlatStyle     = FlatStyle.Flat
             };
-
-            
             var catTable = _txRepo.GetCategoriesTable(type);
             cmbCat.DataSource    = catTable;
             cmbCat.DisplayMember = "CategoryName";
             cmbCat.ValueMember   = "CategoryID";
             cmbCat.SelectedIndex = -1;
 
-            
             var lblPay = MakeLabel("Payment Method", 20, 98);
             var cmbPay = new ComboBox
             {
@@ -214,10 +200,9 @@ namespace PocketLedger.Forms
                 ForeColor     = System.Drawing.Color.White,
                 FlatStyle     = FlatStyle.Flat
             };
-            cmbPay.Items.AddRange(new object[] { "Cash", "Card", "Online Transfer", "Cheque", "Other" });
+            cmbPay.Items.AddRange(new object[] { "Bank Transfer", "Cash", "Cheque", "Online", "Other" });
             cmbPay.SelectedIndex = 0;
 
-            
             var lblDate = MakeLabel("Date", 280, 98);
             var dtpDate = new DateTimePicker
             {
@@ -228,51 +213,45 @@ namespace PocketLedger.Forms
                 Value    = DateTime.Now
             };
 
-            
             var lblNotes = MakeLabel("Notes (optional)", 20, 176);
             var txtNotes = new TextBox
             {
-                Location      = new System.Drawing.Point(20, 204),
-                Size          = new System.Drawing.Size(460, 70),
-                Font          = new System.Drawing.Font("Poppins", 9F),
-                BackColor     = System.Drawing.Color.FromArgb(25, 35, 85),
-                ForeColor     = System.Drawing.Color.White,
-                BorderStyle   = BorderStyle.FixedSingle,
-                Multiline     = true,
+                Location        = new System.Drawing.Point(20, 204),
+                Size            = new System.Drawing.Size(460, 70),
+                Font            = new System.Drawing.Font("Poppins", 9F),
+                BackColor       = System.Drawing.Color.FromArgb(25, 35, 85),
+                ForeColor       = System.Drawing.Color.White,
+                BorderStyle     = BorderStyle.FixedSingle,
+                Multiline       = true,
                 PlaceholderText = $"Add a note about this {type.ToLower()}..."
             };
 
-            
             var btnSave = new Button
             {
                 Text      = $"Save {type}",
                 Font      = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Bold),
                 ForeColor = System.Drawing.Color.White,
-                BackColor = type == "Expense"
-                    ? System.Drawing.Color.FromArgb(200, 60, 60)
-                    : System.Drawing.Color.FromArgb(50, 180, 100),
+                BackColor = System.Drawing.Color.FromArgb(50, 180, 100),
                 FlatStyle  = FlatStyle.Flat,
                 Location   = new System.Drawing.Point(20, 300),
-                Size       = new System.Drawing.Size(160, 38),
-                Cursor     = Cursors.Hand,
-                DialogResult = DialogResult.OK
+                Size       = new System.Drawing.Size(150, 38),
+                Cursor     = Cursors.Hand
             };
             btnSave.FlatAppearance.BorderSize = 0;
 
-            
             var btnCancel = new Button
             {
-                Text         = "Cancel",
-                Font         = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Bold),
-                ForeColor    = System.Drawing.Color.White,
-                BackColor    = System.Drawing.Color.FromArgb(60, 60, 100),
-                FlatStyle    = FlatStyle.Flat,
-                Location     = new System.Drawing.Point(192, 300),
-                Size         = new System.Drawing.Size(110, 38),
-                Cursor       = Cursors.Hand,
-                DialogResult = DialogResult.Cancel
+                Text      = "Cancel",
+                Font      = new System.Drawing.Font("Poppins", 10F, System.Drawing.FontStyle.Bold),
+                ForeColor = System.Drawing.Color.White,
+                BackColor = System.Drawing.Color.FromArgb(60, 60, 100),
+                FlatStyle  = FlatStyle.Flat,
+                Location   = new System.Drawing.Point(182, 300),
+                Size       = new System.Drawing.Size(110, 38),
+                Cursor     = Cursors.Hand
             };
             btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.Click += (s, ev) => dlg.Close();
 
             btnSave.Click += (s, ev) =>
             {
@@ -293,13 +272,12 @@ namespace PocketLedger.Forms
                 {
                     _repo.AddTransaction(loggedEmail, type, amount,
                         Convert.ToInt32(cmbCat.SelectedValue),
-                        cmbPay.SelectedItem?.ToString() ?? "Cash",
+                        cmbPay.SelectedItem?.ToString() ?? "Bank Transfer",
                         txtNotes.Text.Trim(), dtpDate.Value.Date);
 
-                    MessageBox.Show($"✅ {type} saved!", "Success",
+                    MessageBox.Show("✅ Income saved!", "Success",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     _onUpdate?.Invoke();
-                    dlg.DialogResult = DialogResult.OK;
                     dlg.Close();
                 }
                 catch (Exception ex)
@@ -316,7 +294,7 @@ namespace PocketLedger.Forms
             });
 
             dlg.ShowDialog(this);
-            LoadExpenses();
+            LoadIncome();
             LoadSummary();
         }
 
@@ -325,20 +303,20 @@ namespace PocketLedger.Forms
         
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (dgvExpenses.SelectedRows.Count == 0)
+            if (dgvIncome.SelectedRows.Count == 0)
             {
                 MessageBox.Show("Please select a row to delete.", "No Selection",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var row = dgvExpenses.SelectedRows[0];
+            var row = dgvIncome.SelectedRows[0];
             if (row.Cells["ID"]?.Value == null) return;
 
             int id = Convert.ToInt32(row.Cells["ID"].Value);
 
             var confirm = MessageBox.Show(
-                "Are you sure you want to delete this expense?",
+                "Are you sure you want to delete this income record?",
                 "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (confirm == DialogResult.Yes)
@@ -346,7 +324,7 @@ namespace PocketLedger.Forms
                 try
                 {
                     _repo.DeleteTransaction(id);
-                    LoadExpenses();
+                    LoadIncome();
                     LoadSummary();
                     _onUpdate?.Invoke();
                 }
@@ -376,12 +354,12 @@ namespace PocketLedger.Forms
         {
             return new TextBox
             {
-                Location      = new System.Drawing.Point(x, y),
-                Size          = new System.Drawing.Size(240, 30),
-                Font          = new System.Drawing.Font("Poppins", 10F),
-                BackColor     = System.Drawing.Color.FromArgb(25, 35, 85),
-                ForeColor     = System.Drawing.Color.White,
-                BorderStyle   = BorderStyle.FixedSingle,
+                Location        = new System.Drawing.Point(x, y),
+                Size            = new System.Drawing.Size(240, 30),
+                Font            = new System.Drawing.Font("Poppins", 10F),
+                BackColor       = System.Drawing.Color.FromArgb(25, 35, 85),
+                ForeColor       = System.Drawing.Color.White,
+                BorderStyle     = BorderStyle.FixedSingle,
                 PlaceholderText = placeholder
             };
         }
@@ -412,7 +390,7 @@ namespace PocketLedger.Forms
             if (txtSearch.Text != "Search...")
             {
                 string cat = cmbCategory.SelectedItem?.ToString() ?? "All";
-                LoadExpenses(cat, search: txtSearch.Text);
+                LoadIncome(cat, search: txtSearch.Text);
             }
         }
     }
