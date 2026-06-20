@@ -1,8 +1,8 @@
 CREATE DATABASE IF NOT EXISTS pocketledgerDB;
 USE pocketledgerDB;
 
--- Users Table
-CREATE TABLE Users (
+
+CREATE TABLE IF NOT EXISTS Users (
     UserID INT AUTO_INCREMENT PRIMARY KEY,
     Username VARCHAR(50) NOT NULL UNIQUE,
     Email VARCHAR(100) NOT NULL UNIQUE,
@@ -11,21 +11,23 @@ CREATE TABLE Users (
     CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Categories Table
-CREATE TABLE Categories (
+
+CREATE TABLE IF NOT EXISTS Categories (
     CategoryID INT AUTO_INCREMENT PRIMARY KEY,
     CategoryName VARCHAR(100) NOT NULL,
     Type ENUM('Income', 'Expense') NOT NULL
 );
 
--- Transactions Table
-CREATE TABLE Transactions (
+
+CREATE TABLE IF NOT EXISTS Transactions (
     TransactionID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT NOT NULL,
     Type ENUM('Income', 'Expense') NOT NULL,
     Amount DECIMAL(10,2) NOT NULL,
     CategoryID INT,
+    PaymentMethod VARCHAR(50) DEFAULT 'Cash',
     Description TEXT,
+    Notes TEXT,
     Date DATE NOT NULL,
 
     CONSTRAINT fk_transaction_user
@@ -39,8 +41,13 @@ CREATE TABLE Transactions (
         ON DELETE SET NULL
 );
 
--- Budgets Table
-CREATE TABLE Budgets (
+
+
+
+
+
+
+CREATE TABLE IF NOT EXISTS Budgets (
     BudgetID INT AUTO_INCREMENT PRIMARY KEY,
     UserID INT NOT NULL,
     CategoryID INT NOT NULL,
@@ -57,3 +64,53 @@ CREATE TABLE Budgets (
         REFERENCES Categories(CategoryID)
         ON DELETE CASCADE
 );
+
+
+
+
+
+INSERT IGNORE INTO Categories (CategoryID, CategoryName, Type) VALUES
+  (1,  'Salary',            'Income'),
+  (2,  'Business',          'Income'),
+  (3,  'Investment',        'Income'),
+  (4,  'Freelance',         'Income'),
+  (5,  'Other Income',      'Income'),
+  (6,  'Food & Dining',     'Expense'),
+  (7,  'Transport',         'Expense'),
+  (8,  'Bills & Utilities', 'Expense'),
+  (9,  'Shopping',          'Expense'),
+  (10, 'Healthcare',        'Expense'),
+  (11, 'Entertainment',     'Expense'),
+  (12, 'Education',         'Expense'),
+  (13, 'Other Expense',     'Expense');
+
+
+
+
+
+
+CREATE OR REPLACE VIEW BudgetSummaryView AS
+SELECT
+    b.BudgetID,
+    u.Email,
+    c.CategoryName,
+    b.MonthYear,
+    b.BudgetAmount,
+    COALESCE(SUM(t.Amount), 0)                          AS SpentAmount,
+    b.BudgetAmount - COALESCE(SUM(t.Amount), 0)         AS RemainingAmount,
+    CASE
+        WHEN b.BudgetAmount = 0 THEN 'No Budget'
+        WHEN COALESCE(SUM(t.Amount), 0) >= b.BudgetAmount THEN 'Over Budget'
+        WHEN COALESCE(SUM(t.Amount), 0) >= b.BudgetAmount * 0.70 THEN 'Warning'
+        ELSE 'Safe'
+    END AS Status
+FROM Budgets b
+INNER JOIN Users u   ON b.UserID   = u.UserID
+INNER JOIN Categories c ON b.CategoryID = c.CategoryID
+LEFT  JOIN Transactions t
+    ON  t.UserID     = b.UserID
+    AND t.CategoryID = b.CategoryID
+    AND t.Type       = 'Expense'
+    AND DATE_FORMAT(t.Date, '%M') = b.MonthYear
+GROUP BY
+    b.BudgetID, u.Email, c.CategoryName, b.MonthYear, b.BudgetAmount;

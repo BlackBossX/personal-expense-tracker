@@ -19,6 +19,9 @@ namespace PocketLedger.Forms
 
             this.Load += Report_Load;
             btnGenerate.Click += btnGenerate_Click;
+
+            this.FormBorderStyle = FormBorderStyle.FixedDialog;
+            this.MaximizeBox = false;
         }
 
         private void Report_Load(object sender, EventArgs e)
@@ -115,6 +118,11 @@ namespace PocketLedger.Forms
             }
 
             return list;
+        }
+
+        private void Report_Load_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -51,7 +51,7 @@ namespace PocketLedger.Forms
             greeting.Text = $"Hello, {name}!";
             emailbox.Text = loggedEmail;
 
-            // Populate the new panel card
+            
             txtUsername.Text = name;
             txtEmail.Text = loggedEmail;
         }

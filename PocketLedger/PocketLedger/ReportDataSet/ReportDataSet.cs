@@ -2,6 +2,10 @@
 {
 }
 
+namespace PocketLedger.ReportDataSet
+{
+}
+
 namespace PocketLedger
 {
 }
