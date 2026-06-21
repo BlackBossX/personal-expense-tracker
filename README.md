@@ -4,15 +4,26 @@
   <img src="PocketLedger/images/white_logo.png" alt="PocketLedger Logo" width="200" />
 </div>
 
-**PocketLedger** is a simple, intuitive desktop application built in C# (.NET Framework 4.7.2) designed to help individuals monitor and manage their daily financial activities. It provides a straightforward user interface to log expenses, categorize transactions, and review spending habits effortlessly, completely bypassing the complexity of massive enterprise financial tools.
+**PocketLedger** is a simple, intuitive desktop application built in C# (.NET 10.0-windows) designed to help individuals monitor and manage their daily financial activities. It provides a straightforward user interface to log expenses, categorize transactions, and review spending habits effortlessly, completely bypassing the complexity of massive enterprise financial tools.
+
+## Tech Stack & Dependencies
+
+| Technology / Library | Version | Purpose |
+| :--- | :--- | :--- |
+| **.NET SDK** | 10.0-windows | Application framework (WinForms) |
+| **Language** | C# | Core application logic |
+| **Database** | MySQL | Relational local data storage |
+| **BCrypt.Net-Next** | 4.2.0 | Cryptographic password hashing & verification |
+| **MySql.Data** | 9.7.0 | High-performance MySQL database connector |
+| **ReportViewerCore.WinForms** | 15.1.33 | Embedded RDLC layout rendering for financial reporting |
 
 ## Interface Preview
 
 <p align="center">
-  <img src="PocketLedger/images/landing.png" width="700"/>
+  <img src="PocketLedger/images/SS/landing.png" width="700"/>
 </p>
 
-Please refer to the [UI Showcase](UI.md) to view the complete interface screens, including the Landing Page, Login, Sign Up, and Dashboard.
+Please refer to the [UI Showcase](docs/UI.md) to view the complete interface screens, including the Landing Page, Login, Sign Up, Dashboard, Budget Planner, Reports, and more.
 
 ## Why PocketLedger?
 
@@ -57,25 +68,12 @@ Managing personal finances can be challenging without a concrete tracking system
 ## Project Structure
 
 ```text
-├── database/
-│   └── database.sql            # Database initialization script
-├── PocketLedger/
-│   ├── PocketLedger.slnx       # Main Solution file
-│   ├── icons/                  # Assorted Icon assets (cart, home, login, etc.)
-│   │   └── white/              # White-themed icons
-│   ├── images/                 # Image assets (logos, UI resources)
-│   │   └── profilepics/        # User profile pictures
-│   └── PocketLedger/           # Main .NET Project Directory
-│       ├── Database/           # Database connections & repositories
-│       ├── Forms/              # Extracted UI Forms (Addexpense, AddIncome, Dashboard, landing, login, signup, etc.)
-│       ├── Properties/         # Project properties and settings
-│       ├── Resources/          # Embedded .NET resources
-│       ├── PocketLedger.csproj # .NET 10 Project file
-│       └── Program.cs          # Application entry point
-├── README.md
-├── UI.md                       # User Interface screenshots
-├── requirements.txt            # Python/other external requirements
-└── project_proposal.pdf
+├── database/                   # Database scripts and views (database.sql)
+├── docs/                       # Project documents and UI showcases (UI.md)
+└── PocketLedger/               # PocketLedger solution workspace
+    └── PocketLedger/           # Main C# WinForms application
+        ├── Database/           # Database connections and query repository classes
+        └── Forms/              # Windows Forms user interface screens (Dashboard, Login, etc.)
 ```
 
 ## Contributing
