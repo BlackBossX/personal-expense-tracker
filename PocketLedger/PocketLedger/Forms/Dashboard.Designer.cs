@@ -1,4 +1,4 @@
-﻿namespace PocketLedger.Forms
+namespace PocketLedger.Forms
 {
     partial class Dashboard
     {
@@ -98,10 +98,10 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.white_logo;
-            pictureBox7.Location = new Point(494, 48);
+            pictureBox7.Location = new Point(920, 30);
             pictureBox7.Margin = new Padding(4);
             pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(277, 80);
+            pictureBox7.Size = new Size(220, 60);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox7.TabIndex = 9;
             pictureBox7.TabStop = false;
@@ -109,22 +109,22 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Font = new Font("Poppins", 12F);
-            label8.ForeColor = Color.White;
-            label8.Location = new Point(214, 196);
+            label8.Font = new Font("Poppins", 10F);
+            label8.ForeColor = Color.FromArgb(160, 185, 230);
+            label8.Location = new Point(190, 64);
             label8.Name = "label8";
-            label8.Size = new Size(284, 28);
+            label8.Size = new Size(284, 24);
             label8.TabIndex = 11;
             label8.Text = "Let's manage your finances today.";
             // 
             // greeting
             // 
             greeting.AutoSize = true;
-            greeting.Font = new Font("Poppins", 12F);
+            greeting.Font = new Font("Poppins", 16F, FontStyle.Bold);
             greeting.ForeColor = Color.White;
-            greeting.Location = new Point(214, 168);
+            greeting.Location = new Point(190, 32);
             greeting.Name = "greeting";
-            greeting.Size = new Size(21, 28);
+            greeting.Size = new Size(21, 36);
             greeting.TabIndex = 12;
             greeting.Text = "-";
             greeting.Click += greeting_Click;

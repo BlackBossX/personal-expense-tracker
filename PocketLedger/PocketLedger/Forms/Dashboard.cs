@@ -71,111 +71,138 @@ namespace PocketLedger.Forms
         
         private void BuildSummaryPanel()
         {
-            
             var toRemove = new System.Collections.Generic.List<Control>();
             foreach (Control c in this.Controls)
                 if (c.Tag?.ToString() == "summary") toRemove.Add(c);
             foreach (var c in toRemove) this.Controls.Remove(c);
 
-            int startX = 185;   
-            int startY = 230;   
+            int contentX = 185;
+            int contentW = 990;
+            int gap      = 14;
 
-            
-            var lblHeader = new Label
+            int y = 135;
+            AddSummaryLabel(
+                "📊  Financial Overview  —  " + DateTime.Now.ToString("MMMM yyyy"),
+                new Font("Poppins", 11F, FontStyle.Bold),
+                Color.FromArgb(180, 200, 255),
+                new Point(contentX + 4, y), autoSize: true);
+            y += 36;
+
+            int heroH = 110;
+            var heroPanel = MakeCard(
+                contentX, y, contentW, heroH,
+                "Current Balance",
+                Color.FromArgb(80, 220, 140),
+                bigTitle: true);
+            lblBalance = heroPanel.Controls["val"] as Label;
+            this.Controls.Add(heroPanel);
+            y += heroH + gap;
+
+            int halfW = (contentW - gap) / 2;
+            int midH  = 100;
+
+            var incPanel = MakeCard(contentX, y, halfW, midH,
+                "💰  This Month — Income", Color.FromArgb(50, 190, 255));
+            lblMonthIncome = incPanel.Controls["val"] as Label;
+            this.Controls.Add(incPanel);
+
+            var expPanel = MakeCard(contentX + halfW + gap, y, halfW, midH,
+                "💸  This Month — Expense", Color.FromArgb(255, 90, 80));
+            lblMonthExpense = expPanel.Controls["val"] as Label;
+            this.Controls.Add(expPanel);
+            y += midH + gap;
+
+            int thirdW = (contentW - gap * 2) / 3;
+            int thirdH = 100;
+
+            var budPanel = MakeCard(contentX, y, thirdW, thirdH,
+                "🎯  Budget Goals", Color.FromArgb(180, 130, 255));
+            lblBudgetGoal = budPanel.Controls["val"] as Label;
+            this.Controls.Add(budPanel);
+
+            var savPanel = MakeCard(contentX + thirdW + gap, y, thirdW, thirdH,
+                "📈  Savings Rate", Color.FromArgb(255, 200, 50));
+            lblSavingsRate = savPanel.Controls["val"] as Label;
+            this.Controls.Add(savPanel);
+
+            var txPanel = MakeCard(contentX + (thirdW + gap) * 2, y, thirdW, thirdH,
+                "🔁  Transactions", Color.FromArgb(120, 180, 255));
+            lblTxCount = txPanel.Controls["val"] as Label;
+            this.Controls.Add(txPanel);
+            y += thirdH + gap;
+
+            var tipBar = new Panel
             {
-                Text      = "📊  Financial Overview — " + DateTime.Now.ToString("MMMM yyyy"),
-                Font      = new Font("Poppins", 11F, FontStyle.Bold),
+                BackColor = Color.FromArgb(12, 18, 55),
+                Location  = new Point(contentX, y),
+                Size      = new Size(contentW, 38),
+                Tag       = "summary"
+            };
+            var tipLbl = new Label
+            {
+                Text      = "💡  Tip: Use the Budget Planner to set monthly spending limits and track your goals in real time.",
+                Font      = new Font("Poppins", 8.5F, FontStyle.Italic),
+                ForeColor = Color.FromArgb(130, 160, 210),
+                Location  = new Point(12, 9),
+                AutoSize  = true
+            };
+            tipBar.Controls.Add(tipLbl);
+            this.Controls.Add(tipBar);
+        }
+
+        private Panel MakeCard(int x, int y, int w, int h,
+                               string title, Color accent, bool bigTitle = false)
+        {
+            var pnl = new Panel
+            {
+                BackColor = Color.FromArgb(13, 20, 60),
+                Location  = new Point(x, y),
+                Size      = new Size(w, h),
+                Tag       = "summary"
+            };
+
+            pnl.Controls.Add(new Panel
+            {
+                BackColor = accent,
+                Location  = new Point(0, 0),
+                Size      = new Size(w, 4)
+            });
+
+            pnl.Controls.Add(new Label
+            {
+                Text      = title,
+                Font      = new Font("Poppins", bigTitle ? 9F : 8F, FontStyle.Bold),
+                ForeColor = accent,
+                Location  = new Point(14, 12),
+                AutoSize  = true
+            });
+
+            var val = new Label
+            {
+                Name      = "val",
+                Text      = "—",
+                Font      = new Font("Poppins", bigTitle ? 22F : 14F, FontStyle.Bold),
                 ForeColor = Color.White,
-                Location  = new Point(startX + 6, startY),
-                AutoSize  = true,
+                Location  = new Point(14, bigTitle ? 46 : 42),
+                AutoSize  = true
+            };
+            pnl.Controls.Add(val);
+
+            return pnl;
+        }
+
+        private void AddSummaryLabel(string text, Font font, Color fore,
+                                     Point loc, bool autoSize = true)
+        {
+            this.Controls.Add(new Label
+            {
+                Text      = text,
+                Font      = font,
+                ForeColor = fore,
+                Location  = loc,
+                AutoSize  = autoSize,
                 Tag       = "summary"
-            };
-            this.Controls.Add(lblHeader);
-
-            startY += 38;
-
-            
-            var cards = new (string Title, Color Accent, string Tag)[]
-            {
-                ("Current Balance",    Color.FromArgb(80,  200, 140), "balance"),
-                ("This Month Income",  Color.FromArgb(50,  190, 255), "income"),
-                ("This Month Expense", Color.FromArgb(255, 90,  80),  "expense"),
-                ("Budget Goals",       Color.FromArgb(180, 130, 255), "budget"),
-                ("Savings Rate",       Color.FromArgb(255, 195, 50),  "savings"),
-                ("Transactions",       Color.FromArgb(120, 180, 255), "txcount"),
-            };
-
-            int cardW = 156, cardH = 90, gap = 10;
-            int col   = 0;
-
-            foreach (var card in cards)
-            {
-                int cx = startX + col * (cardW + gap);
-
-                var pnl = new Panel
-                {
-                    BackColor = Color.FromArgb(16, 24, 64),
-                    Location  = new Point(cx, startY),
-                    Size      = new Size(cardW, cardH),
-                    Tag       = "summary"
-                };
-
-                
-                var bar = new Panel
-                {
-                    BackColor = card.Accent,
-                    Location  = new Point(0, 0),
-                    Size      = new Size(cardW, 4)
-                };
-                pnl.Controls.Add(bar);
-
-                var hdr = new Label
-                {
-                    Text      = card.Title,
-                    Font      = new Font("Poppins", 7.5F, FontStyle.Bold),
-                    ForeColor = card.Accent,
-                    Location  = new Point(10, 12),
-                    AutoSize  = true
-                };
-                pnl.Controls.Add(hdr);
-
-                var val = new Label
-                {
-                    Text      = "—",
-                    Font      = new Font("Poppins", 12F, FontStyle.Bold),
-                    ForeColor = Color.White,
-                    Location  = new Point(10, 40),
-                    AutoSize  = true
-                };
-                pnl.Controls.Add(val);
-
-                
-                switch (card.Tag)
-                {
-                    case "balance":  lblBalance      = val; break;
-                    case "income":   lblMonthIncome  = val; break;
-                    case "expense":  lblMonthExpense = val; break;
-                    case "budget":   lblBudgetGoal   = val; break;
-                    case "savings":  lblSavingsRate  = val; break;
-                    case "txcount":  lblTxCount      = val; break;
-                }
-
-                this.Controls.Add(pnl);
-                col++;
-            }
-
-            
-            startY += cardH + 18;
-            var lblRecent = new Label
-            {
-                Text      = "💡  Quick Tip: Use Budget Planner to set monthly spending goals.",
-                Font      = new Font("Poppins", 9F, FontStyle.Italic),
-                ForeColor = Color.FromArgb(140, 165, 210),
-                Location  = new Point(startX + 6, startY),
-                AutoSize  = true,
-                Tag       = "summary"
-            };
-            this.Controls.Add(lblRecent);
+            });
         }
 
         
